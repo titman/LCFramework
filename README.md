@@ -33,7 +33,7 @@ LCFramework的构成
  
  Audio文件夹 (音频管理,包括背景音以及震动等.)
  
- External文件夹 (三方文件ASIHttp、FMDB,JSONKit、OpenUDID、MBProgressHUD)
+ External文件夹 (三方文件ASIHttp、FMDB、JSONKit、OpenUDID、MBProgressHUD)
  
  LCFramework的简单使用
 ===========
