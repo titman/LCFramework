@@ -38,6 +38,20 @@ LCFramework的构成
  LCFramework的简单使用
 ===========
 
+LC_Precompile.h中提供如下设置
+
+//** settings */
+#define LC_LOG_ENABLE		         (1)	// 是否打开LOG
+
+#define LC_LOG_SHOW_FIRST_LINE  (1) // 是否打印框架信息
+
+#define LC_CRASH_REPORT         (1) // 是否打开崩溃记录
+
+#define LC_IAP_ENABLE           (1) // 是否打开内购模块 开启后需要引入StoreKit.framework
+
+#define LC_DEBUG_ENABLE         (1) // 是否打开DEBUG工具 三指上划开启或下划关闭
+
+
 Example http request : 
 
         1.在任意处直接调用 如 :  self.GET(@"http://m.weather.com.cn/data/101010100.html");
