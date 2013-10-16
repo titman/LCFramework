@@ -5,7 +5,7 @@ LCFramework是一个轻量级的iOS网络交互应用的开发框架；LCFramewo
 LCFramework的优点
 ===========
 
-1.使用注入NSObject的方式来实现简化Http请求、NSNotificationCenter、NSTimer、HUD、等等.
+1.使用注入NSObject的方式来实现简化Http请求、NSNotificationCenter、NSTimer、HUD等等.
 
 2.框架本身自带常用功能如:Log、崩溃日志、版本检查、IAP、国际化、Debugger等等.
 
