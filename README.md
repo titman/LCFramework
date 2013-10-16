@@ -38,6 +38,10 @@ LCFramework的构成
  LCFramework的简单使用
 ===========
 
+1.在XXX-Prefix.pch预编译文件中引入LC.h
+
+2.添加Frameworks SystemConfiguration.framework、libsqlite3.dylib、CFNetwork.framework、libz.dylib
+
 LC_Precompile.h中提供如下设置
 
    #define LC_LOG_ENABLE		         (1)	// 是否打开LOG
