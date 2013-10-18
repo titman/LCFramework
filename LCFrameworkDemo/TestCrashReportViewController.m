@@ -98,6 +98,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }else{
         [LC_CrashReport cleanCrashLog];
+        [self setDatasource:[NSMutableArray array] key:___ds1];
         [self reloadData];
         [LC_UIAlertView showMessage:@"清除完成" cancelTitle:@"确定"];
     }

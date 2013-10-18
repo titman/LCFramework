@@ -48,10 +48,12 @@
     
     self.title = @"手指滑动屏幕返回";
     
+    
     [self showBarButton:NavigationBarButtonTypeLeft
                   title:@""
                   image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
             selectImage:[UIImage imageNamed:@"navbar_btn_back_pressed.png" useCache:YES]];
+    
     
     LC_UILabel * tipLabel = [[LC_UILabel alloc] initWithFrame:LC_RECT_CREATE(0, 0, self.view.viewFrameWidth, self.view.viewFrameHeight) copyingEnabled:NO];
     

@@ -101,8 +101,13 @@
     NSString * sign     = [userData objectForKey:@"sign"];
     
     [cell setTitle:userName subTitle:sign imageURL:imageURL];
-    
+
     return cell;
+}
+
+-(void) tableView:(LC_UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ;
 }
 
 @end

@@ -55,6 +55,7 @@
                   image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
             selectImage:[UIImage imageNamed:@"navbar_btn_back_pressed.png" useCache:YES]];
     
+    
     LC_UILabel * tipLabel = [[LC_UILabel alloc] initWithFrame:LC_RECT_CREATE(20, 20, LC_DEVICE_WIDTH-40, LC_DEVICE_HEIGHT-44-40) copyingEnabled:YES];
     
     tipLabel.textColor = [UIColor colorWithHexString:@"#6cbbcc"];
@@ -65,6 +66,7 @@
     tipLabel.backgroundColor = LC_COLOR_W_RGB(0, 0, 0, 0.1);
     tipLabel.layer.cornerRadius = 10;
     tipLabel.layer.masksToBounds = YES;
+    
     
     [self.view addSubview:tipLabel];
     LC_RELEASE(tipLabel);

@@ -47,6 +47,8 @@
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    badgeView.center = LC_POINT_CREATE(self.view.center.x, self.view.center.y - 100);
 }
 
 - (void)viewDidLoad
@@ -63,23 +65,30 @@
                   image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
             selectImage:[UIImage imageNamed:@"navbar_btn_back_pressed.png" useCache:YES]];
     
+    
+    
     badgeView = [[LC_UIBadgeView alloc] initWithFrame:LC_RECT_CREATE(0, 0, 0, 0) valueString:@"N"];
+    
     [self.view addSubview:badgeView];
     LC_RELEASE(badgeView);
     
-    badgeView.center = LC_POINT_CREATE(self.view.center.x, self.view.center.y - 100);
+
     
     LC_UIButton * button = [[LC_UIButton alloc] initWithFrame:LC_RECT_CREATE(20, 250, LC_DEVICE_WIDTH - 40, 44)];
     button.title = @"点击增加数量";
     button.backgroundColor = [UIColor colorWithHexString:@"#6cbbcc"];
     [button addTarget:self action:@selector(addBadgeNumber) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:button];
     LC_RELEASE(button);
+    
+    
     
     LC_UIButton * button1 = [[LC_UIButton alloc] initWithFrame:LC_RECT_CREATE(20, 250 + 44 + 5, LC_DEVICE_WIDTH - 40, 44)];
     button1.title = @"点击设置文字";
     button1.backgroundColor = [UIColor colorWithHexString:@"#6cbbcc"];
     [button1 addTarget:self action:@selector(addBadgeString) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:button1];
     LC_RELEASE(button1);
 }
