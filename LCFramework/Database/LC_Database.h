@@ -27,3 +27,9 @@
 #import "LC_Datasource.h"
 
 #import "NSObject+LCDadasource.h"
+
+
+
+@interface LC_Database : NSObject
+
+@end
