@@ -34,7 +34,7 @@
 
 -(void) dealloc
 {
-    self.imagePickFinsedBlock = nil;
+    self.imagePickFinishedBlock = nil;
     
     LC_SUPER_DEALLOC();
 }
@@ -110,8 +110,8 @@
         [_pickerDelegate imagePickerDidFinishedWithImageInfo:info picker:self];
     }
     
-    if (self.imagePickFinsedBlock) {
-        self.imagePickFinsedBlock(self,info);
+    if (self.imagePickFinishedBlock) {
+        self.imagePickFinishedBlock(self,info);
     }
     
     NSLog(@"image info = %@",info);

@@ -30,10 +30,8 @@
 
 -(void) setEdgesForExtendedLayoutNoneStyle
 {
-#ifdef IOS7_OR_LATER
-    if (IOS7_OR_LATER == YES) {
+#if defined(__IPHONE_7_0)
         self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
 #endif
 
 }

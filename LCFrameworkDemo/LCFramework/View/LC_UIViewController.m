@@ -59,6 +59,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupContentView];
+    
 }
 
 -(void) setupContentView

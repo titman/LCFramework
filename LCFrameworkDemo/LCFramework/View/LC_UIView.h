@@ -61,6 +61,7 @@
 #import "LC_UITabBarController.h"
 #import "LC_UISideMenu.h"
 #import "LC_UIImagePickerViewController.h"
+#import "LC_UITopNotificationView.h"
 
 #import "UIViewController+UINavigationBar.h"
 #import "UIViewController+TabBar.h"

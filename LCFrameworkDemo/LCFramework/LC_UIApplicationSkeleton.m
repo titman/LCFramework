@@ -60,7 +60,7 @@ static LC_UIApplicationSkeleton * __skeleton = nil;
 - (void)initializeWindow
 {
 	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
 	[self.window makeKeyAndVisible];
 }
 

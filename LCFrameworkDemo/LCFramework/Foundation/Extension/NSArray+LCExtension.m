@@ -110,7 +110,7 @@ static void			__TTReleaseNoOp( CFAllocatorRef allocator, const void * value ) { 
 
 #pragma mark -
 
-@implementation NSMutableArray(BeeExtension)
+@implementation NSMutableArray(Extension)
 
 @dynamic APPEND;
 

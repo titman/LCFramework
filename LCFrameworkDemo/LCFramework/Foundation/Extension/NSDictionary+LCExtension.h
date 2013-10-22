@@ -26,7 +26,7 @@ typedef NSDictionary *	(^NSDictionaryAppendBlock)( NSString * key, id value );
 
 @property (nonatomic, readonly) NSDictionaryAppendBlock	APPEND;
 
-- (id)allKeysSelectKeyAtIndex:(int)index;
+- (id)allKeysSelectKeyAtIndex:(NSInteger)index;
 
 - (id)objectOfAny:(NSArray *)array;
 - (NSString *)stringOfAny:(NSArray *)array;

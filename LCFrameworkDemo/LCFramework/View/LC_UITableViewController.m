@@ -78,12 +78,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-        
+    
     self.tableView = [[[LC_UITableView alloc] initWithFrame:self.view.bounds style:LC_TABLE_DEFAULT_STYLE] autorelease];
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = LC_TABLE_DEFAULT_BACKGROUND_COLOR;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
     self.view = self.tableView;
 }
 

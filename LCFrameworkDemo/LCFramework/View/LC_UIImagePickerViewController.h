@@ -52,6 +52,6 @@ typedef void (^LCImagePickerFinishedBlock)( LC_UIImagePickerViewController * req
 
 @property (nonatomic, assign) LCImagePickerType pickerType;
 
-@property (nonatomic, copy) LCImagePickerFinishedBlock imagePickFinsedBlock;
+@property (nonatomic, copy) LCImagePickerFinishedBlock imagePickFinishedBlock;
 
 @end

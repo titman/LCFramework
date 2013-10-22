@@ -29,7 +29,7 @@
 @class LC_UINavigationGradientView;
 @class LC_UIImageView;
 
-LC_NOTIFICATION_AS(kUINavigationNofiticationTapReceivedNotification);
+LC_NOTIFICATION_AS(LCUINavigationNofiticationTapReceivedNotification);
 
 //typedef void (^LC_UINavigationNotificationAction)(id);
 

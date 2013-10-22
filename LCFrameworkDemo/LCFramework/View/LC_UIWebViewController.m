@@ -61,14 +61,14 @@
 {
     [super viewWillDisappear:animated];
     
-    [self.navigationController setToolbarHidden:YES animated:NO];
+    [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setToolbarHidden:NO animated:NO];
+    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (id)initWithAddress:(NSString *)urlString
@@ -100,7 +100,8 @@
 	// Do any additional setup after loading the view.
     
     
-    if (self.navigationController && [self.navigationController.viewControllers objectAtIndex:0] != self) {
+    if (self.navigationController.viewControllers.count && [self.navigationController.viewControllers objectAtIndex:0] != self)
+    {
         [self showBarButton:NavigationBarButtonTypeLeft
                       title:@""
                       image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
@@ -213,7 +214,7 @@
 {
     LC_UIActionSheet * actionSheet = [[LC_UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拷贝链接",@"在Safari中打开",nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-    [actionSheet showInView:LC_KEYWINDOW animated:YES];
+    [actionSheet showInView:self.navigationController.view animated:YES];
     LC_RELEASE(actionSheet);
 }
 

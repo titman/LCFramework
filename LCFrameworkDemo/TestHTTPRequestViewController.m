@@ -118,7 +118,7 @@
 - (void) handleRequest:(LC_HTTPRequest *)request
 {
     if (request.succeed) {
-        
+                
         [self setDatasource:[request.jsonData objectForKey:@"weatherinfo"] key:___ds1];
         
         [self endLoading];
@@ -145,7 +145,7 @@
     return 44;
 }
 
--(int) tableView:(LC_UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger) tableView:(LC_UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [LC_DS(___ds1) allKeys].count;
 }

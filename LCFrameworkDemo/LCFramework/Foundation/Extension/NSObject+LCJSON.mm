@@ -16,7 +16,7 @@
 
 #pragma mark -
 
-@implementation NSObject(BeeJSON)
+@implementation NSObject(JSON)
 
 + (id)objectsFromArray:(id)arr
 {
@@ -635,16 +635,3 @@
 }
 
 @end
-
-// ----------------------------------
-// Unit test
-// ----------------------------------
-
-#if defined(__BEE_UNITTEST__) && __BEE_UNITTEST__
-
-TEST_CASE( NSObject_BeeJSON )
-{
-}
-TEST_CASE_END
-
-#endif	// #if defined(__BEE_UNITTEST__) && __BEE_UNITTEST__

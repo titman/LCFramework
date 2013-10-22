@@ -316,7 +316,7 @@
 
 #pragma mark -
 
-LC_NOTIFICATION_DF(kUINavigationNofiticationTapReceivedNotification, @"kUINavigationNofiticationTapReceivedNotification");
+LC_NOTIFICATION_DF(LCUINavigationNofiticationTapReceivedNotification, @"LCUINavigationNofiticationTapReceivedNotification");
 
 
 static CGFloat const __imagePadding = 8.0f;
@@ -475,7 +475,7 @@ static LC_UINavigationNotificationWindow * __notificationWindow = nil;
 
 - (void) handleTap:(UITapGestureRecognizer *)gestureRecognizer
 {    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kUINavigationNofiticationTapReceivedNotification
+    [[NSNotificationCenter defaultCenter] postNotificationName:LCUINavigationNofiticationTapReceivedNotification
                                                         object:self];
     
     [NSObject cancelPreviousPerformRequestsWithTarget:[self class]

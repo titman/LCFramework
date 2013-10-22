@@ -5,8 +5,6 @@
 //  Created by 郭历成 ( titm@tom.com ) on 13-10-16.
 //  Copyright (c) 2013年 LS Developer ( http://www.likesay.com ). All rights reserved.
 //
-#import "LC.h"
-
 #import "AppDelegate.h"
 #import "TestViewController.h"
 #import "mach/mach.h"
@@ -15,12 +13,16 @@
 
 -(void) load
 {
+    NSLog(@"%d",[[[UIDevice currentDevice] systemVersion] compare:@"7.0"]);
+    
+    NSLog(@"%d",IOS7_OR_LATER);
+    
     // 版本检查
     [LC_AppVersion sharedInstance].alertStyle = LC_APPVERSION_ALERT_STYLE_NOTIFICATION;
     [LC_AppVersion checkForNewVersion];
     
-    
-    
+
+
     // 设置全局HUD
     [LC_UIHudCenter setDefaultSuccessIcon:[UIImage imageNamed:@"LC_CheckFinished.png" useCache:YES]];
     [LC_UIHudCenter setDefaultFailureIcon:[UIImage imageNamed:@"LC_Error.png" useCache:YES]];

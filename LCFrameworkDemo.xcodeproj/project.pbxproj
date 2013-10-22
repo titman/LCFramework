@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F3DFD451815358800C75649 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3DFD441815358800C75649 /* QuartzCore.framework */; };
+		6F3DFD48181535B200C75649 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3DFD47181535B200C75649 /* CoreImage.framework */; };
+		6F3DFD4A1815361500C75649 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3DFD491815361500C75649 /* MobileCoreServices.framework */; };
+		6F657EB61815036F007EE262 /* LC_UITopNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F657EB51815036F007EE262 /* LC_UITopNotificationView.m */; };
+		6F657EB81815185E007EE262 /* LC_UITopNotificationView_checkmarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F657EB71815185E007EE262 /* LC_UITopNotificationView_checkmarkIcon@2x.png */; };
+		6F657EBA18151887007EE262 /* LC_UITopNotificationView_exclamationMarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F657EB918151887007EE262 /* LC_UITopNotificationView_exclamationMarkIcon@2x.png */; };
 		6F677139180E91C200B415ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F677138180E91C200B415ED /* Foundation.framework */; };
 		6F67713B180E91C200B415ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F67713A180E91C200B415ED /* CoreGraphics.framework */; };
 		6F67713D180E91C200B415ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F67713C180E91C200B415ED /* UIKit.framework */; };
@@ -203,6 +209,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F3DFD441815358800C75649 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6F3DFD47181535B200C75649 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		6F3DFD491815361500C75649 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6F657EB41815036F007EE262 /* LC_UITopNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LC_UITopNotificationView.h; sourceTree = "<group>"; };
+		6F657EB51815036F007EE262 /* LC_UITopNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LC_UITopNotificationView.m; sourceTree = "<group>"; };
+		6F657EB71815185E007EE262 /* LC_UITopNotificationView_checkmarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LC_UITopNotificationView_checkmarkIcon@2x.png"; sourceTree = "<group>"; };
+		6F657EB918151887007EE262 /* LC_UITopNotificationView_exclamationMarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LC_UITopNotificationView_exclamationMarkIcon@2x.png"; sourceTree = "<group>"; };
 		6F677135180E91C100B415ED /* LCFrameworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCFrameworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F677138180E91C200B415ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6F67713A180E91C200B415ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -507,6 +520,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3DFD4A1815361500C75649 /* MobileCoreServices.framework in Frameworks */,
+				6F3DFD48181535B200C75649 /* CoreImage.framework in Frameworks */,
+				6F3DFD451815358800C75649 /* QuartzCore.framework in Frameworks */,
 				6FA3C3D7180E96C800625ED5 /* SystemConfiguration.framework in Frameworks */,
 				6FA3C3D5180E969B00625ED5 /* libsqlite3.dylib in Frameworks */,
 				6FA3C3D3180E967900625ED5 /* CFNetwork.framework in Frameworks */,
@@ -552,6 +568,9 @@
 		6F677137180E91C100B415ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F3DFD491815361500C75649 /* MobileCoreServices.framework */,
+				6F3DFD47181535B200C75649 /* CoreImage.framework */,
+				6F3DFD441815358800C75649 /* QuartzCore.framework */,
 				6FA3C3D6180E96C800625ED5 /* SystemConfiguration.framework */,
 				6FA3C3D4180E969B00625ED5 /* libsqlite3.dylib */,
 				6FA3C3D2180E967900625ED5 /* CFNetwork.framework */,
@@ -1019,6 +1038,8 @@
 				6F677291180E932400B415ED /* LC_UINavigationController.m */,
 				6F677292180E932400B415ED /* LC_UINavigationNotificationView.h */,
 				6F677293180E932400B415ED /* LC_UINavigationNotificationView.m */,
+				6F657EB41815036F007EE262 /* LC_UITopNotificationView.h */,
+				6F657EB51815036F007EE262 /* LC_UITopNotificationView.m */,
 				6F677294180E932400B415ED /* LC_UIPullLoader.h */,
 				6F677295180E932400B415ED /* LC_UIPullLoader.m */,
 				6F677296180E932400B415ED /* LC_UISideMenu.h */,
@@ -1082,6 +1103,8 @@
 		6F6772AA180E932400B415ED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6F657EB918151887007EE262 /* LC_UITopNotificationView_exclamationMarkIcon@2x.png */,
+				6F657EB71815185E007EE262 /* LC_UITopNotificationView_checkmarkIcon@2x.png */,
 				6F6772AB180E932400B415ED /* LC_DefaultTabbarBkg@2x.png */,
 				6F6772AC180E932400B415ED /* LC_ios7_navbar_bg@2x.png */,
 				6F6772AD180E932400B415ED /* LC_navbar_bg@2x.png */,
@@ -1188,6 +1211,8 @@
 				6F677188180E929100B415ED /* 2000用户测试数据.plist in Resources */,
 				6F67716C180E925800B415ED /* 114.png in Resources */,
 				6F6772CD180E932400B415ED /* MS_loading-1.png in Resources */,
+				6F657EBA18151887007EE262 /* LC_UITopNotificationView_exclamationMarkIcon@2x.png in Resources */,
+				6F657EB81815185E007EE262 /* LC_UITopNotificationView_checkmarkIcon@2x.png in Resources */,
 				6F6772D0180E932400B415ED /* MS_loading-11.png in Resources */,
 				6F6772E3180E932400B415ED /* MS_loading-2.png in Resources */,
 				6F677337180E932400B415ED /* LC_navbar_bg@2x.png in Resources */,
@@ -1259,6 +1284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F657EB61815036F007EE262 /* LC_UITopNotificationView.m in Sources */,
 				6F67731E180E932400B415ED /* LC_UIActionSheet.m in Sources */,
 				6F6772BA180E932400B415ED /* NSObject+LCDadasource.m in Sources */,
 				6F677328180E932400B415ED /* LC_UINavigationController.m in Sources */,
@@ -1406,7 +1432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1438,6 +1464,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1445,7 +1472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1471,18 +1498,24 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		6F677162180E91C200B415ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_MKSTEMP = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCFrameworkDemo/LCFrameworkDemo-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				INFOPLIST_FILE = "LCFrameworkDemo/LCFrameworkDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1490,12 +1523,17 @@
 		6F677163180E91C200B415ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_MKSTEMP = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCFrameworkDemo/LCFrameworkDemo-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				INFOPLIST_FILE = "LCFrameworkDemo/LCFrameworkDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

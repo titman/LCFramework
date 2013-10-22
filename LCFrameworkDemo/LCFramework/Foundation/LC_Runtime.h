@@ -105,6 +105,5 @@ typedef enum _LCTypeEncoding {
 + (NSArray *)callframes:(NSUInteger)depth;
 
 + (void)printCallstack:(NSUInteger)depth;
-+ (void)breakPoint;
 
 @end

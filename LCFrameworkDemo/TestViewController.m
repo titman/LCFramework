@@ -92,13 +92,15 @@
                           @"上下拉刷新的TableView以及ActionSheet && LC_UIPullLoader & LC_UIActionSheet",
                           @"WebView && LC_WebViewController",
                           @"可copy的Label && LC_UILabel ",
-                          @"顶部提示 && LC_UINavigationNotificationView",
+                          @"NavigationBar提示 && LC_UINavigationNotificationView",
                           @"Badge气泡 && LC_UIBadgeView",
                           @"图片的异步加载 && LC_UIImageView",
                           @"带Block的UIAlertView && LC_UIAlertView",
                           @"提示框(Hud) && LC_UIHud",
                           @"动画队列 && LC_UIAnimation",
-                          @"侧边菜单 && LC_UISideMenu"
+                          @"侧边菜单 && LC_UISideMenu",
+                          @"View顶部提示 && LC_UITopNotificationView"
+
                           
                           ] key:___ds1];
     
@@ -110,7 +112,7 @@
                           
                           ] key:___ds2];
     
-    [self showBarButton:NavigationBarButtonTypeRight system:UIBarButtonSystemItemCompose];
+    [self showBarButton:NavigationBarButtonTypeRight system:UIBarButtonSystemItemCamera];
 
 }
 
@@ -122,6 +124,11 @@
         pick.pickerType = LCImagePickerTypeCamera;
         [self presentModalViewController:pick animated:YES];
         
+        pick.imagePickFinishedBlock = ^( LC_UIImagePickerViewController * req ,NSDictionary * imageInfo){
+        
+            NSLog(@"image = %@",imageInfo);
+        
+        };
     }
 }
 
@@ -164,12 +171,12 @@
 
 -(float) tableView:(LC_UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 64;
+    return 64.0;
 }
 
 -(float) tableView:(LC_UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 35;
+    return 35.0;
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -237,6 +244,11 @@
             [self showSideMenu];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
+        }else if (indexPath.row == 11){
+            
+            [LC_UITopNotificationView showInView:self.view style:LCTopNotificationViewTypeError message:@"LCFramework Test LC_UITopNotificationView."];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
         }
 
     }
@@ -266,7 +278,6 @@
     
     if (!menu) {
     
-        [UIImage imageNamed:@""];
         
         LC_UISideMenuItem * item = [[LC_UISideMenuItem alloc] initWithTitle:@"首页" action:^(LC_UISideMenu * menu ,LC_UISideMenuItem * item){
             

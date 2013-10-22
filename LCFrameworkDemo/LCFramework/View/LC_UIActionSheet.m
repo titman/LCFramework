@@ -47,35 +47,33 @@
 {
     if (animated) {
         
-        self.alpha = 0;
         [super showFromRect:view.frame inView:view animated:NO];
-        self.alpha = 0;
         
         self.inView = view;
         
-        self.frame = LC_RECT_CREATE( self.viewFrameX, self.viewFrameY + self.viewFrameHeight, self.viewFrameWidth, self.viewFrameHeight);
-        
-        //动画部分
-        LC_FAST_ANIMATIONS_O_F(0.3, UIViewAnimationOptionCurveLinear, ^{
-        
-            self.alpha = 1;
-            self.frame = LC_RECT_CREATE(self.viewFrameX, self.viewFrameY - self.viewFrameHeight - 20, self.viewFrameWidth, self.viewFrameHeight + 20);
-        
-        }, ^(BOOL isFinished){
-
-            LC_FAST_ANIMATIONS(0.2, ^{
-            
-                self.frame = LC_RECT_CREATE(self.viewFrameX, self.viewFrameY + 20, self.viewFrameWidth ,self.viewFrameHeight-20);
-            
-            });
-        
-        });
+//        self.frame = LC_RECT_CREATE( self.viewFrameX, self.viewFrameY + self.viewFrameHeight, self.viewFrameWidth, self.viewFrameHeight);
+//        
+//        //动画部分
+//        LC_FAST_ANIMATIONS_O_F(0.3, UIViewAnimationOptionCurveLinear, ^{
+//        
+//            self.alpha = 1;
+//            self.frame = LC_RECT_CREATE(self.viewFrameX, self.viewFrameY - self.viewFrameHeight - 20, self.viewFrameWidth, self.viewFrameHeight + 20);
+//        
+//        }, ^(BOOL isFinished){
+//
+//            LC_FAST_ANIMATIONS(0.2, ^{
+//            
+//                self.frame = LC_RECT_CREATE(self.viewFrameX, self.viewFrameY + 20, self.viewFrameWidth ,self.viewFrameHeight-20);
+//            
+//            });
+//        
+//        });
         
         LC_FAST_ANIMATIONS(0.3, ^{
         
-            CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, .9, .9);
-            [view setTransform:t];
-        
+            CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
+            view.transform = t;
+            
         });
         
         

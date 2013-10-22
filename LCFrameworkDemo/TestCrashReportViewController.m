@@ -109,7 +109,7 @@
     return 60;
 }
 
--(int) tableView:(LC_UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger) tableView:(LC_UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [LC_DS(___ds1) count];
 }

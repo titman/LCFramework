@@ -31,7 +31,7 @@
 -(void) setTabBarItemImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage
 {
     // UITabBarItem只是一个载体,用来传递默认图与高亮图,以用来在LC_UITabBarController中取出
-    UITabBarItem * item = [[UITabBarItem alloc] initWithTitle:nil image:image selectedImage:highlightedImage];
+    UITabBarItem * item = [[UITabBarItem alloc]  initWithTitle:@"" image:image tag:0];//initWithTitle:nil image:image selectedImage:highlightedImage];
     item.imageData = [NSArray arrayWithObjects:image,highlightedImage, nil];
     self.tabBarItem = item;
     LC_RELEASE(item);

@@ -49,7 +49,7 @@ typedef NSMutableArray *	(^NSMutableArrayAppendBlock)( id obj );
 
 #pragma mark -
 
-@interface NSMutableArray(BeeExtension)
+@interface NSMutableArray(Extension)
 
 @property (nonatomic, readonly) NSMutableArrayAppendBlock	APPEND;
 

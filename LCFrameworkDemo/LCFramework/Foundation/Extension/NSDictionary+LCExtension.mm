@@ -43,7 +43,7 @@
 	return [[block copy] autorelease];
 }
 
-- (id)allKeysSelectKeyAtIndex:(int)index;
+- (id)allKeysSelectKeyAtIndex:(NSInteger)index;
 {
     if (index + 1 > self.allKeys.count) {
         NSLog(@"NSDictionary+LCExtension - allKeysSelectKeyAtIndex 越界 keys count : %d index : %d",self.allKeys.count,index);
@@ -603,15 +603,3 @@ static void			__TTReleaseNoOp( CFAllocatorRef allocator, const void * value ) {}
 
 @end
 
-// ----------------------------------
-// Unit test
-// ----------------------------------
-
-#if defined(__BEE_UNITTEST__) && __BEE_UNITTEST__
-
-TEST_CASE( NSDictionary_BeeExtension )
-{
-}
-TEST_CASE_END
-
-#endif	// #if defined(__BEE_UNITTEST__) && __BEE_UNITTEST__

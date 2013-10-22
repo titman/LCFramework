@@ -40,8 +40,6 @@
 @property (nonatomic,retain) UIView * backgroundView;
 @property (nonatomic,retain) NSMutableArray *screenShotsList;
 
-@property (nonatomic,assign) BOOL isMoving;
-
 @end
 
 #pragma mark -
@@ -102,7 +100,7 @@
                                                                                  action:@selector(paningGestureReceive:)] autorelease];
     recognizer.delegate = self;
     [recognizer delaysTouchesBegan];
-    [self.view addGestureRecognizer:recognizer];
+    [self.view addGestureRecognizer:recognizer];    
 }
 
 -(void) setBarTitleTextColor:(UIColor *)color shadowColor:(UIColor *)shadowColor
@@ -129,6 +127,14 @@
         [self.screenShotsList addObject:capturedImage];
     }
     
+    if (self.tabBarController && [self.tabBarController isKindOfClass:[LC_UITabBarController class]]) {
+                
+        if (viewController.hidesBottomBarWhenPushed) {
+            LC_UITabBarController * tabbar = (LC_UITabBarController *) self.tabBarController;
+            [tabbar hideBar:YES animation:animated];
+        }
+    }
+    
     [super pushViewController:viewController animated:animated];
 }
 
@@ -136,6 +142,25 @@
 {
     if (self.screenShotsList.count) {
         [self.screenShotsList removeLastObject];
+    }
+    
+    if (self.tabBarController && [self.tabBarController isKindOfClass:[LC_UITabBarController class]]) {
+        
+        LC_UITabBarController * tabbar = (LC_UITabBarController *)self.tabBarController;
+        
+        for (int i = 0; i< self.viewControllers.count-1; i++) {
+            
+            if (i == self.viewControllers.count-2) {
+                
+               UIViewController * vc = [self.viewControllers objectAtIndex:i];
+                
+                if (vc.hidesBottomBarWhenPushed == NO) {
+                    [tabbar hideBar:NO animation:animated];
+                }
+                
+                break;
+            }
+        }
     }
     
     return [super popViewControllerAnimated:animated];
@@ -170,7 +195,6 @@
     lastScreenShotView.transform = CGAffineTransformMakeScale(scale, scale);
     blackMask.alpha = alpha;
     
-    //[self setLayer3D:lastScreenShotView.layer YRotation:( 1.f - x / 320.f) * 90.f anchorPoint:LC_POINT_CREATE(0.5,0.5) perspectiveCoeficient:800];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
@@ -261,7 +285,7 @@
 }
 
 - (void)setLayer3D:(CALayer *)layer YRotation:(CGFloat)degrees anchorPoint:(CGPoint)point perspectiveCoeficient:(CGFloat)m34
-{
+{    
 	CATransform3D transfrom = CATransform3DIdentity;
 	transfrom.m34 = 1.0 / m34;
     CGFloat radiants = degrees / 360.0 * 2 * M_PI;

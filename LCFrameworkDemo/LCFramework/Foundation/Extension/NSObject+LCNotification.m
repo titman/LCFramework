@@ -28,7 +28,7 @@
 
 #pragma mark -
 
-@implementation NSNotification(BeeNotification)
+@implementation NSNotification(LCNotification)
 
 - (BOOL)is:(NSString *)name
 {

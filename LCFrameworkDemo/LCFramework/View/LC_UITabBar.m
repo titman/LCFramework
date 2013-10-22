@@ -136,7 +136,7 @@
     [items enumerateObjectsUsingBlock:^(LC_UITabBarItem * item ,NSUInteger idx, BOOL *stop)
     {
         item.frame = LC_RECT_CREATE(itemWidth * idx, 0, itemWidth, itemHeight);
-        item.tagString = LC_NSSTRING_FORMAT(@"%d",idx);
+        item.tagString = LC_NSSTRING_FORMAT(@"%ld",(unsigned long)idx);
         [self addSubview:item];
     }];
 }

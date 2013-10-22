@@ -95,7 +95,7 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
     LC_RELEASE_ABSOLUTE(_theNewVersionDetails);
     LC_RELEASE_ABSOLUTE(_theNewVersionIconURL);
     
-    [self unobserveNotification:kUINavigationNofiticationTapReceivedNotification];
+    [self unobserveNotification:LCUINavigationNofiticationTapReceivedNotification];
     
     LC_SUPER_DEALLOC();
 }
@@ -123,7 +123,7 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
         self.updateButtonTitle = LC_LO(@"马上更新");
         self.cancelButtonTitle = LC_LO(@"下次再说");
         
-        [self observeNotification:kUINavigationNofiticationTapReceivedNotification];
+        [self observeNotification:LCUINavigationNofiticationTapReceivedNotification];
     });
 }
 
@@ -157,7 +157,7 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
             
             NSArray * applicationInfos = [resultData objectForKey:@"results"];
             
-            __block int resultIndex = -1;
+            __block NSInteger resultIndex = -1;
             __block NSString * newVersionNumber = nil;
             
             [applicationInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
@@ -221,7 +221,7 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
 
         __block LC_AppVersion * nRetainSelf = self;
         
-        alertView.clickBlock = ^(LC_UIAlertView * alertView, int clickIndex){
+        alertView.clickBlock = ^(LC_UIAlertView * alertView, NSInteger clickIndex){
         
             if (clickIndex != alertView.cancelButtonIndex) {
                 if (nRetainSelf.updateButtonClickBlock) {
@@ -243,7 +243,7 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
 
 -(void) handleNotification:(NSNotification *)notification
 {
-    if ([notification is:kUINavigationNofiticationTapReceivedNotification] && notification.object == notificationView) {
+    if ([notification is:LCUINavigationNofiticationTapReceivedNotification] && notification.object == notificationView) {
         
         if (_updateButtonClickBlock) {
             _updateButtonClickBlock(self);

@@ -30,4 +30,6 @@
 
 @property (nonatomic, retain) LC_UITabBar * bar;
 
+-(void) hideBar:(BOOL)yesOrNo animation:(BOOL)animation;
+
 @end

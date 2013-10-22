@@ -80,28 +80,53 @@
 
 -(void) setupBar
 {
-    self.tabBar.opaque = NO;
-    self.tabBar.backgroundColor = [UIColor clearColor];
-
-#if defined(__IPHONE_5_0)
-    self.tabBar.tintColor = [UIColor clearColor];
-    self.tabBar.backgroundImage = nil;
-    self.tabBar.backgroundColor = [UIColor clearColor];
-    self.tabBar.selectedImageTintColor = [UIColor clearColor];
-    self.tabBar.selectionIndicatorImage = nil;
-#endif	// #if defined(__IPHONE_5_0)
-    
-#if defined(__IPHONE_6_0)
-    self.tabBar.shadowImage = nil;
-#endif	// #if defined(__IPHONE_6_0)
-    
+    self.tabBar.opaque = YES;
+    self.tabBar.alpha = 0;
     
     // init LC_UITabBar.
     self.bar = LC_AUTORELEASE([[LC_UITabBar alloc] initWithTabBarItems:nil]);
     self.bar.selectedIndex = self.selectedIndex;
-    self.bar.backgroundColor = [UIColor redColor];
+    self.bar.backgroundColor = [UIColor clearColor];
+    self.bar.frame = self.tabBar.frame;
+    self.bar.userInteractionEnabled = YES;
     
-    [self.tabBar addSubview:self.bar];
+    [self.view addSubview:self.bar];
+    
+    [self.tabBar addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([object isEqual:self.tabBar]) {
+        if ([keyPath isEqualToString:@"frame"]) {
+            
+            self.tabBar.alpha = 0;
+        }
+    }
+}
+
+-(void) hideBar:(BOOL)yesOrNo animation:(BOOL)animation
+{
+    if (animation) {
+        LC_FAST_ANIMATIONS(0.25, ^{
+            
+            if (yesOrNo) {
+                self.bar.alpha = 0;
+            }else{
+                self.bar.alpha = 1;
+            }
+            
+        });
+    }else{
+        if (yesOrNo) {
+            self.bar.alpha = 0;
+        }else{
+            self.bar.alpha = 1;
+        }
+    }
 }
 
 -(void) resetTabBarWithViewControllers:(NSArray *)viewControllers
@@ -113,16 +138,23 @@
         UITabBarItem * sysTabBarItem = obj.tabBarItem;
         
         LC_UITabBarItem * item = [LC_UITabBarItem tabBarItemWithImage:sysTabBarItem.imageData[0] highlightedImage:sysTabBarItem.imageData[1]];
-        [items addObject:item];
+        item.tag = idx;
+        [item addTapTarget:self selector:@selector(itemClick:)];
+         [items addObject:item];
         
     }];
     
     self.bar.items = items;
 }
 
+-(void) itemClick:(UITapGestureRecognizer *)tap
+{
+    [self setSelectedIndex:tap.view.tag];
+}
+
 -(void) handleTabBarItemClick:(LC_UITabBarItem *)item
 {
-    
+    ;
 }
 
 -(void) setSelectedIndex:(NSUInteger)selectedIndex
@@ -132,20 +164,20 @@
     self.bar.selectedIndex = selectedIndex;
     [self handleTabBarItemClick:self.bar.items[selectedIndex]];
     
-    [self.tabBar bringSubviewToFront:self.bar];
+    [self.view bringSubviewToFront:self.bar];
 }
 
 -(void) setSelectedViewController:(UIViewController *)selectedViewController
 {
     [super setSelectedViewController:selectedViewController];
-    
-    int selectIndex = self.selectedIndex;
+
+    NSInteger selectIndex = self.selectedIndex;
     
     [self handleTabBarItemClick:self.bar.items[selectIndex]];
     
     self.bar.selectedIndex = selectIndex;
     
-    [self.tabBar bringSubviewToFront:self.bar];
+    [self.view bringSubviewToFront:self.bar];
 }
 
 -(void) setViewControllers:(NSArray *)viewControllers
@@ -153,6 +185,8 @@
     [super setViewControllers:viewControllers];
     
     [self resetTabBarWithViewControllers:viewControllers];
+    
+    [self.view bringSubviewToFront:self.bar];
 }
 
 -(void) setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated
@@ -160,6 +194,8 @@
     [super setViewControllers:viewControllers animated:animated];
     
     [self resetTabBarWithViewControllers:viewControllers];
+    
+    [self.view bringSubviewToFront:self.bar];
 }
 
 @end
