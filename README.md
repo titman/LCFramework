@@ -57,11 +57,10 @@ LC_Precompile.h中提供如下设置
 
 Example http request : 
 
-        1.在任意处直接调用 如 :  self.GET(@"http://m.weather.com.cn/data/101010100.html");
-        2.直接实现方法 - (void) handleRequest:(LC_HTTPRequest *)request 如 ： 
+        1.在任意处直接调用 如 :  
         
-        - (void) handleRequest:(LC_HTTPRequest *)request
-        {
+        self.GET(@"http://m.weather.com.cn/data/101010100.html") setWhenUpdate:^(LC_HTTPRequest * req){
+        
               if (request.succeed) {
         
                    [self setDatasource:[request.jsonData objectForKey:@"weatherinfo"] key:___ds1];
