@@ -105,4 +105,15 @@ Example 给一个TableViewController增加下拉刷新功能 :
                  [nRetainSelf performSelectorInBackground:@selector(loadData) withObject:nil];
                  
              }];
-             
+
+更多请查看相关API。
+
+LCFramework更新
+===========
+
+
+1.修正Tabbar bug.
+
+2.增加了iOS7效果的滑动返回.
+
+3.增加了LC_Audio.
