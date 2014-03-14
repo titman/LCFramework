@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-21.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -37,7 +37,7 @@
     [self showBarButton:NavigationBarButtonTypeLeft
                   title:@""
                   image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
-            selectImage:[UIImage imageNamed:@"navbar_btn_back_pressed.png" useCache:YES]];
+            selectImage:nil];
     
     
     LC_UILabel * tipLabel = [[LC_UILabel alloc] initWithFrame:LC_RECT_CREATE(20, 20, LC_DEVICE_WIDTH-40, LC_DEVICE_HEIGHT-44-40) copyingEnabled:YES];

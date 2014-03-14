@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-16.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -27,6 +27,8 @@ typedef enum _NavigationBarButtonType {
 
 - (void)showNavigationBarAnimated:(BOOL)animated;
 - (void)hideNavigationBarAnimated:(BOOL)animated;
+
+- (void)showBackBarButtonWithImage:(UIImage *)image selectImage:(UIImage *)selectImage;
 
 - (void)showBarButton:(NavigationBarButtonType)position custom:(UIView *)view;
 - (void)showBarButton:(NavigationBarButtonType)position image:(UIImage *)image selectImage:(UIImage *)selectImage;

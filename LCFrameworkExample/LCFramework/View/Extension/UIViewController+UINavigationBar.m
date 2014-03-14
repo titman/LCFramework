@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-16.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -54,6 +54,37 @@
     [self navigationBarButtonClick:NavigationBarButtonTypeRight];
 }
 
+- (void)showBackBarButtonWithImage:(UIImage *)image selectImage:(UIImage *)selectImage
+{
+	CGRect buttonFrame = CGRectMake(0, 0, image.size.width, image.size.height);
+    
+	if ( buttonFrame.size.width <= BUTTON_MIN_WIDTH )
+	{
+		buttonFrame.size.width = BUTTON_MIN_WIDTH;
+	}
+    
+	if ( buttonFrame.size.height <= BUTTON_MIN_HEIGHT )
+	{
+		buttonFrame.size.height = BUTTON_MIN_HEIGHT;
+	}
+    
+	LC_UIButton * button = [[[LC_UIButton alloc] initWithFrame:buttonFrame] autorelease];
+	button.contentMode = UIViewContentModeScaleAspectFit;
+	button.backgroundColor = [UIColor clearColor];
+    
+    if (image) {
+        [button setImage:image forState:UIControlStateNormal];
+    }
+    
+    if (selectImage) {
+        [button setImage:selectImage forState:UIControlStateHighlighted];
+    }
+    
+	button.titleFont = [UIFont boldSystemFontOfSize:13.0f];
+	button.titleColor = LC_UINAVIGATION_BAR_DEFAULT_BUTTON_TITLE_COLOR;
+    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:(UIView *)button] autorelease];
+}
+
 - (void)showBarButton:(NavigationBarButtonType)position title:(NSString *)name textColor:(UIColor *)textColor
 {
     UIFont  * font = [UIFont systemFontOfSize:13];
@@ -91,8 +122,15 @@
 	LC_UIButton * button = [[[LC_UIButton alloc] initWithFrame:buttonFrame] autorelease];
 	button.contentMode = UIViewContentModeScaleAspectFit;
 	button.backgroundColor = [UIColor clearColor];
-	[button setImage:image forState:UIControlStateNormal];
-    [button setImage:selectImage forState:UIControlStateHighlighted];
+    
+    if (image) {
+        [button setImage:image forState:UIControlStateNormal];
+    }
+    
+    if (selectImage) {
+        [button setImage:selectImage forState:UIControlStateHighlighted];
+    }
+    
 	button.titleFont = [UIFont boldSystemFontOfSize:13.0f];
 	button.titleColor = LC_UINAVIGATION_BAR_DEFAULT_BUTTON_TITLE_COLOR;
     
@@ -125,8 +163,15 @@
 	LC_UIButton * button = [[[LC_UIButton alloc] initWithFrame:buttonFrame] autorelease];
 	button.contentMode = UIViewContentModeScaleAspectFit;
 	button.backgroundColor = [UIColor clearColor];
-	[button setImage:image forState:UIControlStateNormal];
-    [button setImage:selectImage forState:UIControlStateHighlighted];
+    
+    if (image) {
+        [button setImage:image forState:UIControlStateNormal];
+    }
+    
+    if (selectImage) {
+        [button setImage:selectImage forState:UIControlStateHighlighted];
+    }
+    
 	button.title = title;
 	button.titleFont = [UIFont boldSystemFontOfSize:13.0f];
 	button.titleColor = LC_UINAVIGATION_BAR_DEFAULT_BUTTON_TITLE_COLOR;

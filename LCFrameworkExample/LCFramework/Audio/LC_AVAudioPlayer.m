@@ -30,7 +30,7 @@
 + (id) playerWithContentsOfPath:(NSString *)path
 {
     float fileSize = [LC_FileManager fileSizeWithPath:path];
-    
+
     if (fileSize > 1000.f) {
         LC_AVAudioPlayer * player = LC_AUTORELEASE([[LC_AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:path] error:nil]);
         player.delegate = player;

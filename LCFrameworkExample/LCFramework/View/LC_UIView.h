@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-16.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -57,7 +57,7 @@
 #import "LC_UISearchBar.h"
 #import "LC_UITapMaskView.h"
 #import "LC_UIBlurView.h"
-
+#import "LC_UIPropertyPicker.h"
 
 #import "UIViewController+UINavigationBar.h"
 #import "UIViewController+TabBar.h"

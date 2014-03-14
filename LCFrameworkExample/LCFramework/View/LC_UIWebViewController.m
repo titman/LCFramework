@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-21.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -89,7 +89,7 @@
         [self showBarButton:NavigationBarButtonTypeLeft
                       title:@""
                       image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
-                selectImage:[UIImage imageNamed:@"navbar_btn_back_pressed.png" useCache:YES]];
+                selectImage:nil];
     }
     
     [self setupToolBar];
@@ -143,7 +143,7 @@
     LC_RELEASE(actionItem);
     LC_RELEASE(flexItem);
     
-    [self.navigationController.toolbar setBarStyle:UIBarStyleBlack];
+    //[self.navigationController.toolbar setBarStyle:UIBarStyleBlack];
     self.toolbarItems = items;
     
     [self.navigationController setToolbarHidden:NO animated:YES];

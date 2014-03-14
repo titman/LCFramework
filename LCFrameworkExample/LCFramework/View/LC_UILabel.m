@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-21.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -112,7 +112,7 @@
                 NSLog(@" ! UIMenuController will not work with %@ since it cannot become first responder", self);
             }
 
-            UIMenuController *copyMenu = [UIMenuController sharedMenuController];
+            UIMenuController * copyMenu = [UIMenuController sharedMenuController];
             [copyMenu setTargetRect:self.bounds inView:self];
             copyMenu.arrowDirection = self.copyMenuArrowDirection;
             [copyMenu setMenuVisible:YES animated:YES];

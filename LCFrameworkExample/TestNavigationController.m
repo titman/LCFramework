@@ -4,7 +4,7 @@
 
 //  Created by 郭历成 ( titm@tom.com ) on 13-9-21.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page  http://nsobject.me/copyright.rtf ).
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
 //
 
@@ -36,14 +36,15 @@
     [self showBarButton:NavigationBarButtonTypeLeft
                   title:@""
                   image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
-            selectImage:[UIImage imageNamed:@"navbar_btn_back_pressed.png" useCache:YES]];
+            selectImage:nil];
     
     
     LC_UILabel * tipLabel = [[LC_UILabel alloc] initWithFrame:LC_RECT_CREATE(0, 0, self.view.viewFrameWidth, self.view.viewFrameHeight) copyingEnabled:NO];
     
-    tipLabel.textColor = [UIColor colorWithHexString:@"#6cbbcc"];
-    tipLabel.font      = [UIFont boldSystemFontOfSize:14];
-    tipLabel.text      = @"手指按住屏幕,轻轻向右滑动";
+    tipLabel.textColor     = [UIColor colorWithHexString:@"#6cbbcc"];
+    tipLabel.font          = [UIFont boldSystemFontOfSize:14];
+    tipLabel.textAlignment = UITextAlignmentCenter;
+    tipLabel.text          = @"手指按住屏幕,轻轻向右滑动";
     
     [self.view addSubview:tipLabel];
     LC_RELEASE(tipLabel);
