@@ -42,10 +42,10 @@
     LC_SUPER_DEALLOC();
 }
 
-+ (LC_UIHud *)sharedInstance
++ (LC_UIHudCenter *)sharedInstance
 {
     static dispatch_once_t once;
-    static LC_UIHud * __singleton__;
+    static LC_UIHudCenter * __singleton__;
     dispatch_once( &once, ^{ __singleton__ = [[[self class] alloc] init]; } );
     return __singleton__;
 }
