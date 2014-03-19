@@ -10,4 +10,6 @@
 
 @interface LC_UIBlurView : LC_UIView
 
+- (void) setBlurTintColor:(UIColor *)blurTintColor;
+
 @end

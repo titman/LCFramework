@@ -22,17 +22,23 @@
     LC_SUPER_DEALLOC();
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
     self = [super initWithCoder:aDecoder];
-    if (self) {
+    
+    if (self)
+    {
         [self initSelf];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
-    if (self) {
+    
+    if (self)
+    {
         [self initSelf];
     }
     return self;
@@ -41,28 +47,32 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         [self initSelf];
     }
     return self;
 }
 
-- (void)initSelf {
-    
+- (void)initSelf
+{
     // If we don't clip to bounds the toolbar draws a thin shadow on top
     [self setClipsToBounds:YES];
     
-    if (![self toolbar]) {
-        [self setToolbar:[[UIToolbar alloc] initWithFrame:[self bounds]]];
+    if (![self toolbar])
+    {
+        [self setToolbar:LC_AUTORELEASE([[UIToolbar alloc] initWithFrame:[self bounds]])];
         [self.layer insertSublayer:[self.toolbar layer] atIndex:0];
     }
 }
 
-- (void) setBlurTintColor:(UIColor *)blurTintColor {
+- (void) setBlurTintColor:(UIColor *)blurTintColor
+{
     [self.toolbar setBarTintColor:blurTintColor];
 }
 
-- (void)layoutSubviews {
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     [self.toolbar setFrame:[self bounds]];
 }
