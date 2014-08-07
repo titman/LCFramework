@@ -5,7 +5,7 @@ LCFramework
 ===========
 LCFramework是一个轻量级的iOS网络交互应用的开发框架；LCFramework的产生原因是为了简化代码、优化开发时间、数据集中管理等,一定程度上减少程序开发的工作量.
 
-LCFramework的优点
+优点
 ===========
 
 1.使用注入NSObject的方式来实现简化Http请求、NSNotificationCenter、NSTimer、HUD等等.
@@ -14,7 +14,7 @@ LCFramework的优点
 
 3.封装了常用UI使其更好用!如上下拉刷新等。
 
-LCFramework的构成
+组成
 ===========
 
  LC.h (全局头文件)
@@ -26,19 +26,19 @@ LCFramework的构成
  LC_UIApplicationSkeletion.h (使Appdelegate继承该类用以自行管理)
 
  Foundation文件夹 
-  (Log、崩溃日志、沙盒目录、版本检查、IAP、系统信息、FileManager、UserDefaults、内存缓存管理、文件缓存管理、Debugger、国际化、以及各种类目等.)
+  (Log、崩溃日志、沙盒目录、版本检查、IAP、系统信息、FileManager、UserDefaults、内存缓存管理、文件缓存管理、Debugger、国际化等。)
  
- View文件夹 (LCFramework自带控件以及类目等.)
+ View文件夹 (LCFramework自带控件等。)
  
- Animation文件夹 (动画以及动画队列以及类目等.)
+ Animation文件夹 (动画以及动画队列等。)
  
- Network文件夹 (网络请求的封装以及类目等.)
+ Network文件夹 (网络请求的封装等。)
  
- Audio文件夹 (音频管理,包括背景音以及震动等.)
+ Audio文件夹 (音频管理：包括背景音以及震动等。)
  
  External文件夹 (三方文件ASIHttp、FMDB、JSONKit、OpenUDID、MBProgressHUD)
  
- LCFramework的简单使用
+ 简单使用
 ===========
 
 1.在XXX-Prefix.pch预编译文件中引入LC.h
