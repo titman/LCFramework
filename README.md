@@ -5,7 +5,7 @@ LCFramework
 ===========
 LCFramework是一个轻量级的iOS网络交互应用的开发框架；LCFramework的产生原因是为了简化代码、优化开发时间、数据集中管理等，一定程度上减少程序开发的工作量.
 
-介绍
+Introduce
 ===========
 
 1.你可以把它当成一个框架，使用LC的特性进行快速开发，也可以把它当成一个工具集来辅助你现有的项目开发，因为LC并没有很大程度上改变现有的Objective-C的开发模式，同时会大量简化你的代码。
@@ -33,9 +33,10 @@ LC_Precompile.h中提供如下设置
 
    #define LC_DEBUG_ENABLE         (1) // 是否开启DEBUG
 
+等等......
 
 
-Updata
+Update
 ===========
 
 v0.1.3
