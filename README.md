@@ -23,13 +23,15 @@ Introduce
 
 LC_Precompile.h中提供如下设置
 
-   #define LC_LOG_ENABLE		         (1)	// 是否开启LOG
+   #define LC_LOG_ENABLE		          (1) // 是否打开Log
 
-   #define LC_CRASH_REPORT         (1) // 是否开启崩溃记录
+   #define LC_CRASH_REPORT_ENABLE   (1) // 是否打开崩溃记录
 
-   #define LC_IAP_ENABLE           (1) // 是否开启内购模块 开启后需要引入StoreKit.framework
+   #define LC_IAP_ENABLE            (1) // 是否打开内购模块 开启后需要引入StoreKit.framework
 
-   #define LC_DEBUG_ENABLE         (1) // 是否开启DEBUG
+   #define LC_AUDIO_ENABLE          (1) // 是否打开音频模块 开启后需要引入AVFoundation.framework
+
+   #define LC_DEBUG_ENABLE          (1) // 是否打开Debugger
 
 等等......
 
