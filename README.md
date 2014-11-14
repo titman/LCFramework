@@ -1,5 +1,3 @@
-当前版本是0.1.1，已经更新到0.1.3，正在整理，耐心等候...
-
 
 LCFramework
 ===========
@@ -34,6 +32,11 @@ LC_Precompile.h中提供如下设置
    #define LC_DEBUG_ENABLE         (1) // 是否开启DEBUG
 
 等等......
+
+Screenshot
+===========
+
+ ![image](https://github.com/titman/LCFramework/edit/master/Screenshot/screenshot1.gif?raw=false)
 
 
 Update
