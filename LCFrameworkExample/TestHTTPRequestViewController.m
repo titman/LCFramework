@@ -44,7 +44,7 @@
     
     
     
-    __block TestHTTPRequestViewController * nRetainSelf = self;
+    LC_BLOCK_SELF;
     
     [self setPullStyle:LC_PULL_STYLE_HEADER
        backgroundStyle:LC_PULL_BACK_GROUND_STYLE_COLORFUL
@@ -75,7 +75,7 @@
     
         if (request.succeed) {
             
-            [self setDatasource:[request.jsonData objectForKey:@"weatherinfo"] key:___ds1];
+            LC_SDS([request.jsonData objectForKey:@"weatherinfo"], ___ds1);
             [self endLoading];
             
         }else if (request.failed){
