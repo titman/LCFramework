@@ -1,0 +1,115 @@
+//
+//  NSObject+Hud.m
+//  LCFramework
+
+//  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-9-30.
+//  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
+//
+//
+
+#import "NSObject+LCHud.h"
+
+@implementation NSObject (LCHud)
+
+- (LC_UIHud *)showMessageHud:(NSString *)message
+{
+	UIView * container = nil;
+	
+	if ( [self isKindOfClass:[UIView class]] )
+	{
+		container = (UIView *)self;
+	}
+	else if ( [self isKindOfClass:[UIViewController class]] )
+	{
+		container = ((UIViewController *)self).view;
+	}
+    else
+    {
+        container = LC_KEYWINDOW;
+    }
+    
+	return [[LC_UIHudCenter LCInstance] showMessageHud:message inView:container];
+}
+
+- (LC_UIHud *)showSuccessHud:(NSString *)message
+{
+    UIView * container = nil;
+	
+	if ( [self isKindOfClass:[UIView class]] )
+	{
+		container = (UIView *)self;
+	}
+	else if ( [self isKindOfClass:[UIViewController class]] )
+	{
+		container = ((UIViewController *)self).view;
+	}
+    else
+    {
+        container = LC_KEYWINDOW;
+    }
+    
+	return [[LC_UIHudCenter LCInstance] showSuccessHud:message inView:container];
+}
+
+- (LC_UIHud *)showFailureHud:(NSString *)message
+{
+    UIView * container = nil;
+	
+	if ( [self isKindOfClass:[UIView class]] )
+	{
+		container = (UIView *)self;
+	}
+	else if ( [self isKindOfClass:[UIViewController class]] )
+	{
+		container = ((UIViewController *)self).view;
+	}
+    else
+    {
+        container = LC_KEYWINDOW;
+    }
+    
+	return [[LC_UIHudCenter LCInstance] showFailureHud:message inView:container];
+}
+
+- (LC_UIHud *)showLoadingHud:(NSString *)message
+{
+    UIView * container = nil;
+	
+	if ( [self isKindOfClass:[UIView class]] )
+	{
+		container = (UIView *)self;
+	}
+	else if ( [self isKindOfClass:[UIViewController class]] )
+	{
+		container = ((UIViewController *)self).view;
+	}
+    else
+    {
+        container = LC_KEYWINDOW;
+    }
+    
+	return [[LC_UIHudCenter LCInstance] showLoadingHud:message inView:container];
+}
+
+- (LC_UIHud *)showProgressHud:(NSString *)message
+{
+    UIView * container = nil;
+	
+	if ( [self isKindOfClass:[UIView class]] )
+	{
+		container = (UIView *)self;
+	}
+	else if ( [self isKindOfClass:[UIViewController class]] )
+	{
+		container = ((UIViewController *)self).view;
+	}
+    else
+    {
+        container = LC_KEYWINDOW;
+    }
+    
+	return [[LC_UIHudCenter LCInstance] showProgressHud:message inView:container];
+}
+
+@end
