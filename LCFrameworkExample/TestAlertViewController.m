@@ -40,7 +40,6 @@
 
 -(void) showAlertView
 {
-    LC_UILabel
     LC_BLOCK_SELF;
     
     //Alert View
