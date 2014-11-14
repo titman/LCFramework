@@ -36,7 +36,7 @@ LC_Precompile.h中提供如下设置
 Screenshot
 ===========
 
- ![image](https://github.com/titman/LCFramework/edit/master/Screenshot/screenshot1.gif?raw=false)
+ ![image](https://github.com/titman/LCFramework/blob/master/Screenshot/Screenshot1.gif?raw=false)
 
 
 Update
