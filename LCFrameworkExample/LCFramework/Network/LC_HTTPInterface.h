@@ -8,21 +8,47 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum _LCHTTPRequestState{
+    
+    LCHTTPRequestStateFinish = 0,
+    LCHTTPRequestStateFail = 1,
+    LCHTTPRequestStateNoNetwork = 2,
+    LCHTTPRequestStateCancel = 3,
+    LCHTTPRequestStateUpdate = 4,
+    
+}LCHTTPRequestState;
+
+
+#pragma mark -
+
+
+@interface LC_HTTPInterfaceResult : NSObject
+
+@property(nonatomic,assign) LCHTTPRequestState state;
+@property(nonatomic,assign) NSInteger errorCode;
+@property(nonatomic,retain) NSString * errorMessage;
+@property(nonatomic,retain) id json;
+
++(instancetype) result;
+
+@end
+
+#pragma mark -
+
 @interface LC_HTTPInterface : NSObject
 
-@property (nonatomic, copy) NSString * url;
+@property (nonatomic, copy)   NSString * url;
 @property (nonatomic, retain) NSMutableDictionary * parameters;
 
 +(instancetype) interface;
 
 typedef LC_HTTPInterface * (^LCHTTPInterfaceRequestBlock)();
 typedef LC_HTTPInterface * (^LCHTTPRequestPostBlock)();
+typedef void (^LCHTTPRequestUpdateBlock)(LC_HTTPRequest * request);
 
 @property (nonatomic, readonly) LCHTTPInterfaceRequestBlock  REQUEST;
 @property (nonatomic, readonly) LCHTTPRequestPostBlock	     POST;
-@property (nonatomic, readonly) LCHTTPRequestPostBlock	     POST;
-
-receiver
+@property (nonatomic, copy)     LCHTTPRequestUpdateBlock	 UPDATE;
 
 -(void) request;
 -(void) post;

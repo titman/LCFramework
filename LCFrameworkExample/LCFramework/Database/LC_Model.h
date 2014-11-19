@@ -14,22 +14,16 @@ typedef NSData *   (^LCModelArchiverBlock)();
 typedef LC_Model * (^LCModelArchiverSaveBlock)( NSString * path );
 
 
-@interface LC_Model : MTLModel
+@interface LC_Model : NSObject
+{
+    LC_HTTPInterface * _modelInterface;
+    NSMutableArray * _observers;
+}
 
-/*
- 
-      Thanks for MTLModel.
- 
- */
+@property Class interfaceClass;
+@property (nonatomic,readonly)  LC_HTTPInterface * modelInterface;
+@property (nonatomic, readonly) NSMutableArray * observers;
 
-///** 序列化 */
-//@property(nonatomic,readonly) LCModelArchiverBlock SERIALIZE;
-//
-///** 序列化并保存至文件 */
-//@property(nonatomic,readonly) LCModelArchiverSaveBlock SERIALIZE_SAVE;
-//
-///** 反序列化 */
-//+(instancetype) deserializeWithPath:(NSString *)archiverPath;
-//+(instancetype) deserializeWithData:(NSData *)archiverData;
+- (void)addObserver:(id)obj;
 
 @end

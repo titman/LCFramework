@@ -62,6 +62,8 @@
 #import "LC_UITextField.h"
 #import "LC_UIKeyBoard.h"
 #import "LC_UIViewBuilder.h"
+#import "LC_UICollectionView.h"
+#import "LC_UICollectionViewController.h"
 
 #import "UIViewController+LCUINavigationBar.h"
 #import "UIViewController+LCTabBar.h"

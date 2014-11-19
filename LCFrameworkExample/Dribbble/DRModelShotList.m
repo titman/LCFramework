@@ -7,22 +7,51 @@
 //
 
 #import "DRModelShotList.h"
-#import "DRInterfaceShotList.h"
+#import "DRShotsListData.h"
 
 #define PER_PAGE	(30)
 
 @implementation DRModelShotList
 
+LC_IMP_SIGNAL(DRModelShotListLoadFinished);
+LC_IMP_SIGNAL(DRModelShotListLoadFailed);
+
 -(void) goToPage:(NSInteger)page
 {
-    LC_HTTPInterface * interface = [LC_HTTPInterface interface];
+    [self.modelInterface cancelRequests];
     
-    interface.url = [LC_API LCInstance].url.APPEND(@"popular");
+    self.modelInterface.url = [LC_API LCInstance].url.APPEND(@"shots/popular");
     
-    interface.parameters.APPEND(@"per_page",@(PER_PAGE));
-    interface.parameters.APPEND(@"page",@(page));
+    self.modelInterface.parameters.APPEND(@"per_page",@(PER_PAGE));
+    self.modelInterface.parameters.APPEND(@"page",@(page));
     
-    interface.REQUEST();
+    self.modelInterface.REQUEST();
+    
+    LC_BLOCK_SELF;
+    
+    self.modelInterface.UPDATE = ^( LC_HTTPRequest * request ){
+        
+        if (request.succeed) {
+            
+            id result = [SHOT objectsFromArray:request.jsonData[@"shots"]];
+            
+            if (page == 1) {
+                nRetainSelf.shots = result;
+            }
+            else{
+                [nRetainSelf.shots addObjectsFromArray:result];
+            }
+            
+            [nRetainSelf sendUISignal:[DRModelShotList DRModelShotListLoadFinished]];
+        }
+        else if(request.failed){
+         
+            [nRetainSelf sendUISignal:DRModelShotList.DRModelShotListLoadFailed];
+        }
+        else if (request.cancelled){
+            
+        }
+    };
 }
 
 @end

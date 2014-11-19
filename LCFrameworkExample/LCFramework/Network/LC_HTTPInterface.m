@@ -8,12 +8,47 @@
 
 #import "LC_HTTPInterface.h"
 
+#pragma mark -
+
+@implementation LC_HTTPInterfaceResult
+
+-(void) dealloc
+{
+    [_errorMessage release];
+    [_json release];
+    
+    [super dealloc];
+}
+
++(instancetype) result
+{
+    return LC_AUTORELEASE([[LC_HTTPInterfaceResult alloc] init]);
+}
+
+-(id) init
+{
+    LC_SUPER_INIT({
+        
+        self.state = LCHTTPRequestStateFail;
+        self.errorCode = 0;
+        self.errorMessage = @"";
+        self.json = nil;
+    })
+}
+
+@end
+
+#pragma mark -
+
 @implementation LC_HTTPInterface
 
 -(void) dealloc
 {
+    self.UPDATE = nil;
+    
     [_url release];
     [_parameters release];
+    
     LC_SUPER_DEALLOC();
 }
 
@@ -62,27 +97,18 @@
 {
     LCHTTPRequestPostBlock block = ^ LC_HTTPInterface * ()
     {
-        [self POST];
+        [self post];
         return self;
     };
     
     return [[block copy] autorelease];
 }
 
--(void) update:(LC_HTTPRequest *)request
-{
-    if (request.succeed) {
-        
-    }else if (request.failed){
-        
-    }else if (request.cancelled){
-        
-    }
-}
-
 -(void) handleRequest:(LC_HTTPRequest *)request
 {
-    [self update:request];
+    if (self.UPDATE) {
+        self.UPDATE(request);
+    }
 }
 
 

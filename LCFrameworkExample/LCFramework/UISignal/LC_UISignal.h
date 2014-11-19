@@ -9,6 +9,7 @@
 //
 
 #import "UIView+LCUISignal.h"
+#import "LC_Model+LCUISignal.h"
 #import "LC_UISignalCenter.h"
 
 #undef  LC_ST_SIGNAL

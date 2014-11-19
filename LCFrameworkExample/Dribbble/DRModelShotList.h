@@ -10,6 +10,11 @@
 
 @interface DRModelShotList : LC_Model
 
+LC_ST_SIGNAL(DRModelShotListLoadFinished);
+LC_ST_SIGNAL(DRModelShotListLoadFailed);
+
 @property (nonatomic, retain) NSMutableArray *	shots;
+
+-(void) goToPage:(NSInteger)page;
 
 @end

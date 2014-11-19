@@ -489,7 +489,7 @@
 			{
 				NSObject * value = [inputParams objectForKey:key];
 				
-				[self setPostValue:[value asNSString] forKey:key];
+				[self setPostValue:value forKey:key];
 			}
 		}
         

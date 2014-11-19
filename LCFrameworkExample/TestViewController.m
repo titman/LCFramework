@@ -22,6 +22,7 @@
 #import "TestAlertViewController.h"
 #import "TestHudViewController.h"
 #import "TestAnimationViewController.h"
+#import "DRMainViewController.h"
 
 @interface TestViewController ()
 
@@ -88,9 +89,7 @@
     
     [self setDatasource:@[
                           
-//                          @"网络请求 && LC_HTTPRequest",
-//                          @"程序崩溃记录 && LC_CrashReport",
-//                          @"系统信息 && LC_SystemInfo",
+                          @"Dribbble && Demo",
                           
                           ] key:___ds3];
     
@@ -258,6 +257,14 @@
         
         }
     
+    }
+    
+    else if (indexPath.section == 2){
+        
+        if (indexPath.row == 0) {
+            
+            [self.navigationController pushViewController:[[DRMainViewController viewController] hiddenBottomBarWhenPushed:YES] animated:YES];
+        }
     }
 }
 

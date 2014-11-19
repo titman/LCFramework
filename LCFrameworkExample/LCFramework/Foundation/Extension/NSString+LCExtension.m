@@ -664,18 +664,11 @@
 		
 		NSString * append = [[[NSString alloc] initWithFormat:first arguments:args] autorelease];
 		
-		va_end( args );
-        
-        if ([self respondsToSelector:@selector(appendString:)]) {
-            [self appendString:append];
-        }else{
+        va_end( args );
             
-            NSMutableString * mutableSelf = [[self mutableCopy] autorelease];
-            [mutableSelf appendString:append];
-            return mutableSelf;
-        }
-        
-		return self;
+        NSMutableString * mutableSelf = [[self mutableCopy] autorelease];
+        [mutableSelf appendString:append];
+        return mutableSelf;
 	};
 	
 	return [[block copy] autorelease];

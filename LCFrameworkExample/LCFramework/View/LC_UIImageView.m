@@ -213,7 +213,7 @@ typedef void (^LCUIImageViewClipFinishBlock) ();
 		return;
 	}
     
-	if ( NO == [string hasPrefix:@"http://"] )
+	if ( NO == [string hasPrefix:@"http://"] && NO == [string hasPrefix:@"https://"])
 	{
 		string = [NSString stringWithFormat:@"http://%@", string];
 	}
@@ -243,9 +243,7 @@ typedef void (^LCUIImageViewClipFinishBlock) ();
 		}
 	}
     
-    if (defaultImage) {
-        [self changeImage:defaultImage];
-    }
+    [self changeImage:defaultImage];
 	
     NSString * md5String = [string MD5];
     NSString * filePath = [[LC_ImageCache LCInstance].fileCache.cachePath stringByAppendingString:LC_NSSTRING_FORMAT(@"/%@",md5String)];

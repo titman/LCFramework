@@ -26,14 +26,14 @@
 
 - (BOOL)send:(LC_UISignal *)signal
 {
-    INFO(@"[LC_UISignal] send\n\n[\n signal name : %@\n from : %@ \n]\n",signal.name,[signal.source class]);
+    INFO(@"[LC_UISignal] send [Signal name : %@ from : %@ ]",signal.name,[signal.source class]);
     
     return [self routes:signal];
 }
 
 -(BOOL) forward:(id)object signal:(LC_UISignal *)signal
 {
-    INFO(@"[LC_UISignal] forward\n\n[\n signal name : %@\n from : %@/n to : %@ \n]\n",signal.name,[signal.source class],[object class]);
+    INFO(@"[LC_UISignal] forward [Signal name : %@ from : %@ to : %@ ]",signal.name,[signal.source class],[object class]);
 
     NSString * selectorName = [NSString stringWithFormat:@"handleUISignal_%@:", signal.name];
     SEL selector = NSSelectorFromString( selectorName );

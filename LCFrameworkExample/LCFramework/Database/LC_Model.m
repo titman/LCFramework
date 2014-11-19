@@ -10,7 +10,59 @@
 
 #import "LC_Model.h"
 
+@interface LC_Model ()
+
+
+@end
+
 @implementation LC_Model
+
+@synthesize observers = _observers;
+@synthesize modelInterface = _modelInterface;
+
+-(void) dealloc
+{
+    [_observers removeAllObjects];
+    [_observers release];
+    
+    [_modelInterface cancelRequests];
+    [_modelInterface release];
+    
+    [super dealloc];
+}
+
+-(id) modelInterface
+{
+    if (self.interfaceClass == nil) {
+        
+        self.interfaceClass = [LC_HTTPInterface class];
+    }
+    
+    if (!_modelInterface) {
+        
+        _modelInterface = [[self.interfaceClass alloc] init];
+    }
+    
+    return _modelInterface;
+}
+
+- (void)addObserver:(id)obj
+{
+    if ( [self.observers containsObject:obj] == NO )
+    {
+        [self.observers addObject:obj];
+    }
+}
+
+- (NSMutableArray *) observers
+{
+    if (!_observers) {
+        
+        _observers = [[NSMutableArray nonRetainingArray] retain];
+    }
+    
+    return _observers;
+}
 
 //-(id) initWithCoder:(NSCoder *)aDecoder
 //{
