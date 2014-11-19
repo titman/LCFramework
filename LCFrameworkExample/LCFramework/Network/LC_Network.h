@@ -11,6 +11,8 @@
 #import "Reachability.h"
 #import "LC_HTTPRequest.h"
 #import "LC_HTTPRequestQueue.h"
+#import "LC_API.h"
+#import "LC_HTTPInterface.h"
 
 
 #import "NSObject+LCHTTPRequest.h"

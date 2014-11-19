@@ -1,5 +1,5 @@
 //
-//  NSObject+LCInstance.h
+//  LC_API.h
 //  LCFramework
 
 //  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-9-16.
@@ -10,12 +10,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (LCInstance)
+@interface LC_API : NSObject
 
-//performSelector
+@property(nonatomic,copy) NSString * url;
 
-+ (instancetype) LCInstance;
-
-+ (NSString *) currentInstenceInfo;
+-(BOOL) request;
 
 @end

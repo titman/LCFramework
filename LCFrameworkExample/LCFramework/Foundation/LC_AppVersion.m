@@ -114,7 +114,7 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
 {
     [self cancelRequests];
 
-    NSString * iTunesServiceURL = [NSString stringWithFormat:appVersionAppLookupURLFormat, self.appStoreCountry];
+    NSString * iTunesServiceURL = [NSString stringWithFormat:appVersionAppLookupURLFormat, @"US"];
 
     iTunesServiceURL = [iTunesServiceURL stringByAppendingFormat:@"?bundleId=%@",[LC_SystemInfo appIdentifier]];
     
@@ -166,24 +166,29 @@ static NSString *const appVersionAppLookupURLFormat = @"http://itunes.apple.com/
 //                self.theNewVersionNumber = nil;
 //                self.theNewVersionURL = nil;
             }
-        
+            
+            if (_checkFinishBlock) {
+                _checkFinishBlock(self);
+            }
+            
+            if (self.autoPresentedUpdateAlert) {
+                [self showNewVersionUpdateAlert];
+            }
+            
         }
         
     }else if (request.failed){
         
         INFO(@"[LC_AppVersion] Check failed : %@",request.error.description);
         
+        if (_checkFinishBlock) {
+            _checkFinishBlock(self);
+        }
+        
     }else if (request.cancelled){
 
     }
-
-    if (_checkFinishBlock) {
-        _checkFinishBlock(self);
-    }
     
-    if (self.autoPresentedUpdateAlert) {
-        [self showNewVersionUpdateAlert];
-    }
 }
 
 -(void) showNewVersionUpdateAlert
