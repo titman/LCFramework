@@ -14,6 +14,4 @@
 
 @property(nonatomic,copy) NSString * url;
 
--(BOOL) request;
-
 @end

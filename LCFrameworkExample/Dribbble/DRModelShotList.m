@@ -42,7 +42,7 @@ LC_IMP_SIGNAL(DRModelShotListLoadFailed);
                 [nRetainSelf.shots addObjectsFromArray:result];
             }
             
-            [nRetainSelf sendUISignal:[DRModelShotList DRModelShotListLoadFinished]];
+            [nRetainSelf sendUISignal:DRModelShotList.DRModelShotListLoadFinished];
         }
         else if(request.failed){
          

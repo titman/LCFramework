@@ -32,12 +32,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [LC_API LCInstance].url = @"http://api.dribbble.com/";
-    
-    self.listModel = [[[DRModelShotList alloc] init] autorelease];
-    [self.listModel addObserver:self];
-    
     
     self.title = @"Dribbble";
 
@@ -45,6 +39,14 @@
                   title:@""
                   image:[UIImage imageNamed:@"navbar_btn_back.png" useCache:YES]
             selectImage:nil];
+    
+    
+    
+    
+    [LC_API LCInstance].url = @"http://api.dribbble.com/";
+    
+    self.listModel = [[[DRModelShotList alloc] init] autorelease];
+    [self.listModel addObserver:self];
     
     
     LC_BLOCK_SELF;
