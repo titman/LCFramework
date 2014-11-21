@@ -80,6 +80,12 @@ LC_HANDLE_SIGNAL(DRModelShotListLoadFailed){
     [self showMessageHud:@"加载失败..."];
 }
 
+LC_HANDLE_SIGNAL(DRShotListCellDetailAction){
+    
+    NSLog(@"Push detail...");
+    
+}
+
 #pragma mark -
 
 

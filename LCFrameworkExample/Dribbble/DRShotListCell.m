@@ -110,6 +110,8 @@
 
 @implementation DRShotListCell
 
+LC_IMP_SIGNAL(DRShotListCellDetailAction);
+
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -128,6 +130,8 @@
         _shotView.viewFrameHeight = 150;
         _shotView.showIndicator = YES;
         _shotView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
+        _shotView.userInteractionEnabled = YES;
+        _shotView.signalName = self.DRShotListCellDetailAction;
         self.ADD(_shotView);
         
         
@@ -136,6 +140,8 @@
         _shotViewOther.viewFrameX = _shotView.viewRightX + 5;
         _shotViewOther.showIndicator = YES;
         _shotViewOther.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
+        _shotViewOther.userInteractionEnabled = YES;
+        _shotViewOther.signalName = self.DRShotListCellDetailAction;
         self.ADD(_shotViewOther);
         
         

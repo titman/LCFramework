@@ -17,4 +17,6 @@
 @property(nonatomic,assign) SHOT * shot;
 @property(nonatomic,assign) SHOT * shotOther;
 
+LC_ST_SIGNAL(DRShotListCellDetailAction);
+
 @end
