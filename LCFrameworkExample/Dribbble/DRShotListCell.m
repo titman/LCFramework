@@ -11,7 +11,7 @@
 #import "DRShotListCell.h"
 #import "DRShotsListData.h"
 
-@interface DRShotBottomView : LC_UIView
+@interface DRShotBottomView : LC_UIBlurView
 {
     LC_UIImageView * _lookTip;
     LC_UILabel * _lookLabel;
@@ -33,7 +33,6 @@
     LC_SUPER_INIT({
         
         self.viewFrameHeight = 20;
-        self.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
 #1
         _lookTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-views.png" useCache:YES] imageWithTintColor:[UIColor whiteColor]]];
         _lookTip.viewFrameX = 10;
