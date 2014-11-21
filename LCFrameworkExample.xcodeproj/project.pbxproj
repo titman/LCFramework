@@ -240,6 +240,9 @@
 		BF3F497C1A13150B00D7C943 /* LC_WebStop.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3F489F1A13150B00D7C943 /* LC_WebStop.png */; };
 		BF3F497D1A13150B00D7C943 /* LC_WebStop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3F48A01A13150B00D7C943 /* LC_WebStop@2x.png */; };
 		BF3F497F1A13174F00D7C943 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3F497E1A13174F00D7C943 /* libxml2.dylib */; };
+		BFDF24AE1A1F492100D11B27 /* icon-comments.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDF24AB1A1F492100D11B27 /* icon-comments.png */; };
+		BFDF24AF1A1F492100D11B27 /* icon-hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDF24AC1A1F492100D11B27 /* icon-hearts.png */; };
+		BFDF24B01A1F492100D11B27 /* icon-views.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDF24AD1A1F492100D11B27 /* icon-views.png */; };
 		BFED3F441A1C2EAE001DFBD1 /* LC_API.m in Sources */ = {isa = PBXBuildFile; fileRef = BFED3F411A1C2EAE001DFBD1 /* LC_API.m */; };
 		BFED3F451A1C2EAE001DFBD1 /* LC_HTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = BFED3F431A1C2EAE001DFBD1 /* LC_HTTPInterface.m */; };
 		BFED3F4E1A1C3670001DFBD1 /* DRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFED3F4A1A1C366F001DFBD1 /* DRMainViewController.m */; };
@@ -685,6 +688,9 @@
 		BF3F489F1A13150B00D7C943 /* LC_WebStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LC_WebStop.png; sourceTree = "<group>"; };
 		BF3F48A01A13150B00D7C943 /* LC_WebStop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LC_WebStop@2x.png"; sourceTree = "<group>"; };
 		BF3F497E1A13174F00D7C943 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		BFDF24AB1A1F492100D11B27 /* icon-comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-comments.png"; sourceTree = "<group>"; };
+		BFDF24AC1A1F492100D11B27 /* icon-hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-hearts.png"; sourceTree = "<group>"; };
+		BFDF24AD1A1F492100D11B27 /* icon-views.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-views.png"; sourceTree = "<group>"; };
 		BFED3F401A1C2EAE001DFBD1 /* LC_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LC_API.h; sourceTree = "<group>"; };
 		BFED3F411A1C2EAE001DFBD1 /* LC_API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LC_API.m; sourceTree = "<group>"; };
 		BFED3F421A1C2EAE001DFBD1 /* LC_HTTPInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LC_HTTPInterface.h; sourceTree = "<group>"; };
@@ -885,6 +891,9 @@
 		1349702318B3CF880037D252 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BFDF24AB1A1F492100D11B27 /* icon-comments.png */,
+				BFDF24AC1A1F492100D11B27 /* icon-hearts.png */,
+				BFDF24AD1A1F492100D11B27 /* icon-views.png */,
 				1349702918B3CFAD0037D252 /* documents_normal@2x.png */,
 				1349702A18B3CFAD0037D252 /* documents@2x.png */,
 				1349702B18B3CFAD0037D252 /* LC_CheckFinished@2x.png */,
@@ -1710,6 +1719,7 @@
 				1349704218B3CFAD0037D252 /* Default.png in Resources */,
 				13496FD118B3CECA0037D252 /* InfoPlist.strings in Resources */,
 				1349704118B3CFAD0037D252 /* Default-568h@2x.png in Resources */,
+				BFDF24AF1A1F492100D11B27 /* icon-hearts.png in Resources */,
 				BF3F48B61A13150B00D7C943 /* iPodTouch4.plist in Resources */,
 				BF3F48B51A13150B00D7C943 /* iPodTouch3.plist in Resources */,
 				BF3F48AF1A13150B00D7C943 /* iPhone3Gs.plist in Resources */,
@@ -1724,10 +1734,12 @@
 				BF3F48E81A13150B00D7C943 /* MS_big_arrow@2x.png in Resources */,
 				BF3F49781A13150B00D7C943 /* LC_WebForward.png in Resources */,
 				BF3F49761A13150B00D7C943 /* LC_WebBack.png in Resources */,
+				BFDF24B01A1F492100D11B27 /* icon-views.png in Resources */,
 				1349702818B3CFA30037D252 /* 000-click.mp3 in Resources */,
 				BF3F49741A13150B00D7C943 /* LC_UITopNotificationView_checkmarkIcon@2x.png in Resources */,
 				BF3F497C1A13150B00D7C943 /* LC_WebStop.png in Resources */,
 				1349704018B3CFAD0037D252 /* preferences@2x.png in Resources */,
+				BFDF24AE1A1F492100D11B27 /* icon-comments.png in Resources */,
 				BF3F48B11A13150B00D7C943 /* iPhone4s.plist in Resources */,
 				BF3F48B41A13150B00D7C943 /* iPhone5s.plist in Resources */,
 				BF3F49791A13150B00D7C943 /* LC_WebForward@2x.png in Resources */,

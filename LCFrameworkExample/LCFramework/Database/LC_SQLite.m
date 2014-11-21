@@ -1,6 +1,6 @@
 //
 //  LC_SQLite.m
-//  LCFrameworkExample
+//  LCFramework
 //
 //  Created by CBSi-Leer on 14-3-12.
 //  Copyright (c) 2014年 Licheng Guo iOS Developer ( http://nsobject.me ). All rights reserved.

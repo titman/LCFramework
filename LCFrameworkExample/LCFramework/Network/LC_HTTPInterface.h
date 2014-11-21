@@ -1,9 +1,11 @@
 //
 //  LC_HTTPInterface.h
-//  LCFrameworkExample
+//  LCFramework
 //
-//  Created by 郭历成 ( titm@tom.com ) on 14-11-15.
-//  Copyright (c) 2014年 Licheng Guo iOS Developer ( http://nsobject.me ). All rights reserved.
+///  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-10-11.
+//  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
+//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
+//
 //
 
 #import <Foundation/Foundation.h>
