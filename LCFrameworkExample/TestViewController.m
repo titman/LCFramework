@@ -43,6 +43,13 @@
     LC_SUPER_DEALLOC();
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.tableView scrollToBottomAnimated:YES];
+}
+
 - (id) init
 {
     LC_SUPER_INIT({
@@ -68,7 +75,7 @@
                           @" NavigationBar提示 && LC_UINavigationNotificationView",
                           @" Badge气泡 && LC_UIBadgeView",
                           @" 图片的异步加载 && LC_UIImageView",
-                          @" Block的UIAlertView && LC_UIAlertView",
+                          @" 带Block的UIAlertView && LC_UIAlertView",
                           @" 提示框(Hud) && LC_UIHud",
                           @" 动画队列 && LC_UIAnimation",
                           @" 侧边菜单 && LC_UISideMenu",

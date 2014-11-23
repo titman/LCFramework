@@ -32,4 +32,6 @@
 
 -(instancetype) initWithX:(float)x Y:(float)y;
 
+-(CGSize) viewContentSize;
+
 @end

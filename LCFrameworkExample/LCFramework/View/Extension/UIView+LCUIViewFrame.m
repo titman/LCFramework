@@ -121,4 +121,30 @@
     return self.viewFrameHeight/2;
 }
 
+-(CGSize) viewContentSize
+{
+    NSArray * subViews = self.subviews;
+    
+    float height = 0.f;
+    float width = 0.f;
+    
+    for (UIView * view in subViews) {
+        
+        float rightWidth = view.viewRightX;
+        float bottomHeight = view.viewBottomY;
+        
+        if (bottomHeight > height) {
+            
+            height = bottomHeight;
+        }
+        
+        if (rightWidth > width) {
+            
+            width = rightWidth;
+        }
+    }
+    
+    return LC_SIZE(width, height);
+}
+
 @end

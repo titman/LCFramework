@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		130C73C818B3DF4300ADCFFB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130C73C718B3DF4300ADCFFB /* AVFoundation.framework */; };
+		1319409A1A223B2400EE38B2 /* DRShotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131940991A223B2400EE38B2 /* DRShotDetailViewController.m */; };
 		13496FC718B3CECA0037D252 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13496FC618B3CECA0037D252 /* Foundation.framework */; };
 		13496FC918B3CECA0037D252 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13496FC818B3CECA0037D252 /* CoreGraphics.framework */; };
 		13496FCB18B3CECA0037D252 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13496FCA18B3CECA0037D252 /* UIKit.framework */; };
@@ -266,6 +267,8 @@
 
 /* Begin PBXFileReference section */
 		130C73C718B3DF4300ADCFFB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		131940981A223B2400EE38B2 /* DRShotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotDetailViewController.h; sourceTree = "<group>"; };
+		131940991A223B2400EE38B2 /* DRShotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotDetailViewController.m; sourceTree = "<group>"; };
 		13496FC318B3CECA0037D252 /* LCFrameworkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCFrameworkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13496FC618B3CECA0037D252 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		13496FC818B3CECA0037D252 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1622,6 +1625,8 @@
 				BFED3F571A1C9D8A001DFBD1 /* DRShotListCell.m */,
 				BFED3F491A1C366F001DFBD1 /* DRMainViewController.h */,
 				BFED3F4A1A1C366F001DFBD1 /* DRMainViewController.m */,
+				131940981A223B2400EE38B2 /* DRShotDetailViewController.h */,
+				131940991A223B2400EE38B2 /* DRShotDetailViewController.m */,
 			);
 			path = Dribbble;
 			sourceTree = "<group>";
@@ -1828,6 +1833,7 @@
 				BF3F496B1A13150B00D7C943 /* LC_UITextView.m in Sources */,
 				BF3F49151A13150B00D7C943 /* NSArray+LCExtension.m in Sources */,
 				BF3F49421A13150B00D7C943 /* UIImage+LCExtension.m in Sources */,
+				1319409A1A223B2400EE38B2 /* DRShotDetailViewController.m in Sources */,
 				BF3F49271A13150B00D7C943 /* LC_FileManager.m in Sources */,
 				BF3F495B1A13150B00D7C943 /* LC_UIKeyBoard.m in Sources */,
 				BF3F49631A13150B00D7C943 /* LC_UISideMenu.m in Sources */,

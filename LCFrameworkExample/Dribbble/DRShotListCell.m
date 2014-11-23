@@ -34,33 +34,36 @@
         
         self.viewFrameHeight = 20;
 #1
-        _lookTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-views.png" useCache:YES] imageWithTintColor:[UIColor whiteColor]]];
+        _lookTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-views.png" useCache:YES] imageWithTintColor:[UIColor colorWithHexString:@"#5AC8FB"]]];
         _lookTip.viewFrameX = 10;
         _lookTip.viewFrameY = self.viewMidHeight - _lookTip.viewMidHeight;
         
         self.ADD(_lookTip);
         
         _lookLabel = LC_UILabel.view;
+        _lookLabel.textColor = [UIColor colorWithHexString:@"#5AC8FB"];
         _lookLabel.font = [UIFont systemFontOfSize:10];
         
         self.ADD(_lookLabel);
 #2
-        _commentTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-comments.png" useCache:YES] imageWithTintColor:[UIColor whiteColor]]];
+        _commentTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-comments.png" useCache:YES] imageWithTintColor:[UIColor colorWithHexString:@"#5AC8FB"]]];
         _commentTip.viewFrameY = self.viewMidHeight - _commentTip.viewMidHeight;
         
         self.ADD(_commentTip);
         
         _commentLabel = LC_UILabel.view;
+        _commentLabel.textColor = [UIColor colorWithHexString:@"#5AC8FB"];
         _commentLabel.font = [UIFont systemFontOfSize:10];
         
         self.ADD(_commentLabel);
 #3
-        _likeTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-hearts.png" useCache:YES] imageWithTintColor:[UIColor whiteColor]]];
+        _likeTip = [LC_UIImageView imageViewWithImage:[[UIImage imageNamed:@"icon-hearts.png" useCache:YES] imageWithTintColor:[UIColor colorWithHexString:@"#5AC8FB"]]];
         _likeTip.viewFrameY = self.viewMidHeight - _likeTip.viewMidHeight;
         
         self.ADD(_likeTip);
         
         _likeLabel = LC_UILabel.view;
+        _likeLabel.textColor = [UIColor colorWithHexString:@"#5AC8FB"];
         _likeLabel.font = [UIFont systemFontOfSize:10];
         
         self.ADD(_likeLabel);
@@ -193,6 +196,8 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
     _shotView.url    = _shot.image_teaser_url;
     _headView.url    = _shot.player.avatar_url;
     _bottomBack.shot = shot;
+    
+    _shotView.tagString = LC_NSSTRING_FORMAT(@"%d-0",self.cellIndexPath.row);
 }
 
 -(void) setShotOther:(SHOT *)shotOther
@@ -206,6 +211,8 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
     _shotViewOther.url    = _shotOther.image_teaser_url;
     _headViewOther.url    = _shotOther.player.avatar_url;
     _bottomBackOther.shot = shotOther;
+    
+    _shotView.tagString = LC_NSSTRING_FORMAT(@"%d-1",self.cellIndexPath.row);
 }
 
 @end

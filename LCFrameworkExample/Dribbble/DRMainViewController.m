@@ -9,6 +9,7 @@
 #import "DRMainViewController.h"
 #import "DRModelShotList.h"
 #import "DRShotListCell.h"
+#import "DRShotDetailViewController.h"
 
 @interface DRMainViewController ()
 {
@@ -81,9 +82,17 @@ LC_HANDLE_SIGNAL(DRModelShotListLoadFailed){
 }
 
 LC_HANDLE_SIGNAL(DRShotListCellDetailAction){
+
+    NSArray * tag = [((UIView *)signal.source).tagString componentsSeparatedByString:@"-"];
     
-    NSLog(@"Push detail...");
+    NSInteger row = [tag[0] integerValue];
+    NSInteger index = [tag[1] integerValue];
     
+    SHOT * data = self.listModel.shots[row + index];
+    
+    DRShotDetailViewController * detail = [DRShotDetailViewController viewController];
+    detail.shot = data;
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark -
@@ -92,6 +101,8 @@ LC_HANDLE_SIGNAL(DRShotListCellDetailAction){
 -(LC_UITableViewCell *) tableView:(LC_UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DRShotListCell * cell = [tableView autoCreateDequeueReusableCellWithIdentifier:@"cell" andClass:[DRShotListCell class]];
+    
+    cell.cellIndexPath = indexPath;
     
     NSInteger index = indexPath.row * 2;
     
