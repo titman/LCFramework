@@ -90,9 +90,12 @@ LC_HANDLE_SIGNAL(DRShotListCellDetailAction){
     
     SHOT * data = self.listModel.shots[row + index];
     
-    DRShotDetailViewController * detail = [DRShotDetailViewController viewController];
-    detail.shot = data;
-    [self.navigationController pushViewController:detail animated:YES];
+    NSLog(@"Data : %@",data);
+    NSLog(@"Index : %d",row + index);
+    
+    //DRShotDetailViewController * detail = [DRShotDetailViewController viewController];
+    //detail.shot = data;
+    //[self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark -
