@@ -218,7 +218,7 @@
 #endif	// #if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
     
     [request setThreadPriority:0.5];
-    [request setQueuePriority:NSOperationQueuePriorityLow];
+    [request setQueuePriority:NSOperationQueuePriorityNormal];
     
     [_requests addObject:request];
     

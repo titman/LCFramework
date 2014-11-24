@@ -88,7 +88,7 @@ LC_HANDLE_SIGNAL(DRShotListCellDetailAction)
     NSInteger row = [tag[0] integerValue];
     NSInteger index = [tag[1] integerValue];
     
-    SHOT * data = self.listModel.shots[row + index];
+    SHOT * data = self.listModel.shots[row * 2 + index];
     
     DRShotDetailViewController * detail = [[[DRShotDetailViewController alloc] initWithShot:data] autorelease];
     [self.navigationController pushViewController:detail animated:YES];
@@ -118,7 +118,7 @@ LC_HANDLE_SIGNAL(DRShotListCellDetailAction)
 
 -(float) tableView:(LC_UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150 + (LC_DEVICE_WIDTH - (150 * 2))/3;
+    return (LC_DEVICE_WIDTH - 21)/2.f + 7.f;
 }
 
 -(NSInteger) tableView:(LC_UITableView *)tableView numberOfRowsInSection:(NSInteger)section

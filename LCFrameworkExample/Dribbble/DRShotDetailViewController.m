@@ -10,6 +10,7 @@
 #import "DRModelCommentList.h"
 #import "DRShotsListData.h"
 #import "DRShotDetailHeader.h"
+#import "DRShotCommentCell.h"
 
 @interface DRShotDetailViewController ()
 {
@@ -98,19 +99,24 @@ LC_HANDLE_SIGNAL(DRModelCommentListLoadFailed)
 
 -(LC_UITableViewCell *) tableView:(LC_UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LC_UITableViewCell * cell = [tableView autoCreateDequeueReusableCellWithIdentifier:@"cell" andClass:[LC_UITableViewCell class]];
+    DRShotCommentCell * cell = [tableView autoCreateDequeueReusableCellWithIdentifier:@"cell" andClass:[DRShotCommentCell class]];
     
     cell.cellIndexPath = indexPath;
     
-    COMMENT * comment = self.listModel.comments[indexPath.row];
-    cell.textLabel.text = comment.body;
+    cell.comment = self.listModel.comments[indexPath.row];
     
     return cell;
 }
 
 -(float) tableView:(LC_UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40;
+    COMMENT * comment = self.listModel.comments[indexPath.row];
+    
+    CGSize size = [comment.body sizeWithFont:[UIFont systemFontOfSize:14] byWidth:LC_DEVICE_WIDTH - 55];
+
+    float height = size.height < 40 ? 40 : size.height;
+    
+    return height + 29.f;
 }
 
 -(NSInteger) tableView:(LC_UITableView *)tableView numberOfRowsInSection:(NSInteger)section

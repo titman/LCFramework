@@ -122,14 +122,12 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
-        float inv = (LC_DEVICE_WIDTH - (150 * 2))/3;
-        
         
         _shotView = LC_UIImageView.view;
-        _shotView.viewFrameX = inv;
-        _shotView.viewFrameY = inv;
-        _shotView.viewFrameWidth = 150;
-        _shotView.viewFrameHeight = 150;
+        _shotView.viewFrameX = 7;
+        _shotView.viewFrameY = 7;
+        _shotView.viewFrameWidth = (LC_DEVICE_WIDTH - 21)/2.f;
+        _shotView.viewFrameHeight = _shotView.viewFrameWidth;
         _shotView.showIndicator = YES;
         _shotView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
         _shotView.userInteractionEnabled = YES;

@@ -270,7 +270,7 @@ static NSOperationQueue *sharedQueue = nil;
 		ASIUnableToCreateRequestError = [[NSError alloc] initWithDomain:NetworkRequestErrorDomain code:ASIUnableToCreateRequestErrorType userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Unable to create request (bad url?)",NSLocalizedDescriptionKey,nil]];
 		ASITooMuchRedirectionError = [[NSError alloc] initWithDomain:NetworkRequestErrorDomain code:ASITooMuchRedirectionErrorType userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"The request failed because it redirected too many times",NSLocalizedDescriptionKey,nil]];
 		sharedQueue = [[NSOperationQueue alloc] init];
-		[sharedQueue setMaxConcurrentOperationCount:4];
+		[sharedQueue setMaxConcurrentOperationCount:10];
 
 	}
 }

@@ -37,7 +37,6 @@
         _shotView = LC_UIImageView.view;
         _shotView.viewFrameWidth = LC_DEVICE_WIDTH;
         _shotView.viewFrameHeight = LC_DEVICE_WIDTH;
-        _shotView.backgroundColor = [UIColor lightGrayColor];
         _shotView.showIndicator = YES;
         _shotView.contentMode = UIViewContentModeScaleAspectFill;
         
@@ -90,7 +89,7 @@
     _bottomTool.shot = shot;
     _userHead.url = shot.player.avatar_url;
     _userNick.text = shot.player.name;
-    _userSigh.text = LC_NSSTRING_FORMAT(@"Likes: %@ Followers: %@, Following: %@",shot.player.likes_count,shot.player.followers_count,shot.player.following_count);
+    _userSigh.text = LC_NSSTRING_FORMAT(@"Likes: %@ Followers: %@ Follow: %@",shot.player.likes_count,shot.player.followers_count,shot.player.following_count);
 }
 
 @end

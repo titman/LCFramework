@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		130C73C818B3DF4300ADCFFB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130C73C718B3DF4300ADCFFB /* AVFoundation.framework */; };
 		1319409A1A223B2400EE38B2 /* DRShotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131940991A223B2400EE38B2 /* DRShotDetailViewController.m */; };
+		133878101A2377E60008B55E /* DRShotCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1338780F1A2377E60008B55E /* DRShotCommentCell.m */; };
 		13496FC718B3CECA0037D252 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13496FC618B3CECA0037D252 /* Foundation.framework */; };
 		13496FC918B3CECA0037D252 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13496FC818B3CECA0037D252 /* CoreGraphics.framework */; };
 		13496FCB18B3CECA0037D252 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13496FCA18B3CECA0037D252 /* UIKit.framework */; };
@@ -271,6 +272,8 @@
 		130C73C718B3DF4300ADCFFB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		131940981A223B2400EE38B2 /* DRShotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotDetailViewController.h; sourceTree = "<group>"; };
 		131940991A223B2400EE38B2 /* DRShotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotDetailViewController.m; sourceTree = "<group>"; };
+		1338780E1A2377E60008B55E /* DRShotCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotCommentCell.h; sourceTree = "<group>"; };
+		1338780F1A2377E60008B55E /* DRShotCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotCommentCell.m; sourceTree = "<group>"; };
 		13496FC318B3CECA0037D252 /* LCFrameworkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCFrameworkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13496FC618B3CECA0037D252 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		13496FC818B3CECA0037D252 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -753,6 +756,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1338780C1A2377020008B55E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFED3F4B1A1C366F001DFBD1 /* DRModelShotList.h */,
+				BFED3F4C1A1C366F001DFBD1 /* DRModelShotList.m */,
+				BFEA41581A233C08003D7899 /* DRModelCommentList.h */,
+				BFEA41591A233C08003D7899 /* DRModelCommentList.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1338780D1A2377140008B55E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BFED3F591A1C9E1F001DFBD1 /* DRShotsListData.h */,
+				BFED3F5A1A1C9E1F001DFBD1 /* DRShotsListData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		13496FBA18B3CECA0037D252 = {
 			isa = PBXGroup;
 			children = (
@@ -1623,18 +1646,16 @@
 		BFED3F461A1C366F001DFBD1 /* Dribbble */ = {
 			isa = PBXGroup;
 			children = (
-				BFED3F591A1C9E1F001DFBD1 /* DRShotsListData.h */,
-				BFED3F5A1A1C9E1F001DFBD1 /* DRShotsListData.m */,
-				BFED3F4B1A1C366F001DFBD1 /* DRModelShotList.h */,
-				BFED3F4C1A1C366F001DFBD1 /* DRModelShotList.m */,
-				BFEA41581A233C08003D7899 /* DRModelCommentList.h */,
-				BFEA41591A233C08003D7899 /* DRModelCommentList.m */,
+				1338780D1A2377140008B55E /* Data */,
+				1338780C1A2377020008B55E /* Model */,
 				BFED3F561A1C9D8A001DFBD1 /* DRShotListCell.h */,
 				BFED3F571A1C9D8A001DFBD1 /* DRShotListCell.m */,
 				BFED3F491A1C366F001DFBD1 /* DRMainViewController.h */,
 				BFED3F4A1A1C366F001DFBD1 /* DRMainViewController.m */,
 				BFEA415B1A234318003D7899 /* DRShotDetailHeader.h */,
 				BFEA415C1A234318003D7899 /* DRShotDetailHeader.m */,
+				1338780E1A2377E60008B55E /* DRShotCommentCell.h */,
+				1338780F1A2377E60008B55E /* DRShotCommentCell.m */,
 				131940981A223B2400EE38B2 /* DRShotDetailViewController.h */,
 				131940991A223B2400EE38B2 /* DRShotDetailViewController.m */,
 			);
@@ -1941,6 +1962,7 @@
 				BF3F49691A13150B00D7C943 /* LC_UITapMaskView.m in Sources */,
 				BF3F48BD1A13150B00D7C943 /* ASIFormDataRequest.m in Sources */,
 				BF3F493C1A13150B00D7C943 /* LC_UISignal.m in Sources */,
+				133878101A2377E60008B55E /* DRShotCommentCell.m in Sources */,
 				BF3F491E1A13150B00D7C943 /* NSObject+LCProperty.m in Sources */,
 				BF3F49671A13150B00D7C943 /* LC_UITableViewCell.m in Sources */,
 				BF3F48E01A13150B00D7C943 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
