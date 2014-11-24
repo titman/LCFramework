@@ -40,6 +40,8 @@ Screenshot
 
  ![image](https://github.com/titman/LCFramework/blob/master/Screenshot/Screenshot1.gif?raw=false)
 
+ ![image](https://github.com/titman/LCFramework/blob/master/Screenshot/Screenshot2.png?raw=false)
+
 
 Update
 ===========
