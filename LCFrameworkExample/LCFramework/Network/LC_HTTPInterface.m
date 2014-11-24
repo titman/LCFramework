@@ -46,6 +46,8 @@
 
 -(void) dealloc
 {
+    [self cancelRequests];
+    
     self.UPDATE = nil;
     
     [_url release];

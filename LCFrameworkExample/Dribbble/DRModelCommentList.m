@@ -50,11 +50,11 @@ LC_IMP_SIGNAL(DRModelCommentListLoadFailed);
                 [nRetainSelf.comments addObjectsFromArray:result];
             }
             
-            [nRetainSelf sendUISignal:self.DRModelCommentListLoadFinished];
+            [nRetainSelf sendUISignal:nRetainSelf.DRModelCommentListLoadFinished];
         }
         else if(request.failed){
             
-            [nRetainSelf sendUISignal:self.DRModelCommentListLoadFailed];
+            [nRetainSelf sendUISignal:nRetainSelf.DRModelCommentListLoadFailed];
         }
         else if (request.cancelled){
             

@@ -50,11 +50,11 @@ LC_IMP_SIGNAL(DRModelShotListLoadFailed);
                 [nRetainSelf.shots addObjectsFromArray:result];
             }
             
-            [nRetainSelf sendUISignal:self.DRModelShotListLoadFinished];
+            [nRetainSelf sendUISignal:nRetainSelf.DRModelShotListLoadFinished];
         }
         else if(request.failed){
          
-            [nRetainSelf sendUISignal:self.DRModelShotListLoadFailed];
+            [nRetainSelf sendUISignal:nRetainSelf.DRModelShotListLoadFailed];
         }
         else if (request.cancelled){
             
