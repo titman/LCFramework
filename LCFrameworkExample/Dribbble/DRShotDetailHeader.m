@@ -85,6 +85,7 @@
 -(void) setShot:(SHOT *)shot
 {
     self.backgroundImageView.url = shot.image_teaser_url;
+    
     _shotView.url = shot.image_url;
     _bottomTool.shot = shot;
     _userHead.url = shot.player.avatar_url;

@@ -41,8 +41,6 @@ LC_IMP_SIGNAL(DRModelCommentListLoadFailed);
         
         if (request.succeed) {
             
-            id value = request.jsonData;
-            
             id result = [COMMENT objectsFromArray:request.jsonData[@"comments"]];
             
             if (page == 1) {
