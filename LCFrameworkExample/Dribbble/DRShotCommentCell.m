@@ -84,7 +84,7 @@
     
     float height = size.height < 40 ? 40 : size.height;
     
-    _line.viewFrameY = height + 24.f - 0.5;
+    _line.viewFrameY = height + 24.f - _line.viewFrameHeight;
 }
 
 @end
