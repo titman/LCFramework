@@ -244,6 +244,8 @@
 		BFDF24AE1A1F492100D11B27 /* icon-comments.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDF24AB1A1F492100D11B27 /* icon-comments.png */; };
 		BFDF24AF1A1F492100D11B27 /* icon-hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDF24AC1A1F492100D11B27 /* icon-hearts.png */; };
 		BFDF24B01A1F492100D11B27 /* icon-views.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDF24AD1A1F492100D11B27 /* icon-views.png */; };
+		BFEA415A1A233C08003D7899 /* DRModelCommentList.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA41591A233C08003D7899 /* DRModelCommentList.m */; };
+		BFEA415D1A234318003D7899 /* DRShotDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA415C1A234318003D7899 /* DRShotDetailHeader.m */; };
 		BFED3F441A1C2EAE001DFBD1 /* LC_API.m in Sources */ = {isa = PBXBuildFile; fileRef = BFED3F411A1C2EAE001DFBD1 /* LC_API.m */; };
 		BFED3F451A1C2EAE001DFBD1 /* LC_HTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = BFED3F431A1C2EAE001DFBD1 /* LC_HTTPInterface.m */; };
 		BFED3F4E1A1C3670001DFBD1 /* DRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFED3F4A1A1C366F001DFBD1 /* DRMainViewController.m */; };
@@ -694,6 +696,10 @@
 		BFDF24AB1A1F492100D11B27 /* icon-comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-comments.png"; sourceTree = "<group>"; };
 		BFDF24AC1A1F492100D11B27 /* icon-hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-hearts.png"; sourceTree = "<group>"; };
 		BFDF24AD1A1F492100D11B27 /* icon-views.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-views.png"; sourceTree = "<group>"; };
+		BFEA41581A233C08003D7899 /* DRModelCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRModelCommentList.h; sourceTree = "<group>"; };
+		BFEA41591A233C08003D7899 /* DRModelCommentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRModelCommentList.m; sourceTree = "<group>"; };
+		BFEA415B1A234318003D7899 /* DRShotDetailHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotDetailHeader.h; sourceTree = "<group>"; };
+		BFEA415C1A234318003D7899 /* DRShotDetailHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotDetailHeader.m; sourceTree = "<group>"; };
 		BFED3F401A1C2EAE001DFBD1 /* LC_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LC_API.h; sourceTree = "<group>"; };
 		BFED3F411A1C2EAE001DFBD1 /* LC_API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LC_API.m; sourceTree = "<group>"; };
 		BFED3F421A1C2EAE001DFBD1 /* LC_HTTPInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LC_HTTPInterface.h; sourceTree = "<group>"; };
@@ -1621,10 +1627,14 @@
 				BFED3F5A1A1C9E1F001DFBD1 /* DRShotsListData.m */,
 				BFED3F4B1A1C366F001DFBD1 /* DRModelShotList.h */,
 				BFED3F4C1A1C366F001DFBD1 /* DRModelShotList.m */,
+				BFEA41581A233C08003D7899 /* DRModelCommentList.h */,
+				BFEA41591A233C08003D7899 /* DRModelCommentList.m */,
 				BFED3F561A1C9D8A001DFBD1 /* DRShotListCell.h */,
 				BFED3F571A1C9D8A001DFBD1 /* DRShotListCell.m */,
 				BFED3F491A1C366F001DFBD1 /* DRMainViewController.h */,
 				BFED3F4A1A1C366F001DFBD1 /* DRMainViewController.m */,
+				BFEA415B1A234318003D7899 /* DRShotDetailHeader.h */,
+				BFEA415C1A234318003D7899 /* DRShotDetailHeader.m */,
 				131940981A223B2400EE38B2 /* DRShotDetailViewController.h */,
 				131940991A223B2400EE38B2 /* DRShotDetailViewController.m */,
 			);
@@ -1885,6 +1895,7 @@
 				1349701818B3CF660037D252 /* TestCrashReportViewController.m in Sources */,
 				BFED3F4E1A1C3670001DFBD1 /* DRMainViewController.m in Sources */,
 				BF3F49521A13150B00D7C943 /* LC_UIActivityIndicatorView.m in Sources */,
+				BFEA415D1A234318003D7899 /* DRShotDetailHeader.m in Sources */,
 				13496FD318B3CECA0037D252 /* main.m in Sources */,
 				BF3F492D1A13150B00D7C943 /* LC_MemoryCache.m in Sources */,
 				BF3F49161A13150B00D7C943 /* NSData+LCExtension.m in Sources */,
@@ -1943,6 +1954,7 @@
 				BF3F49171A13150B00D7C943 /* NSDictionary+LCExtension.mm in Sources */,
 				BF3F491F1A13150B00D7C943 /* NSObject+LCSwizzle.m in Sources */,
 				BF3F48E31A13150B00D7C943 /* MTLModel+NSCoding.m in Sources */,
+				BFEA415A1A233C08003D7899 /* DRModelCommentList.m in Sources */,
 				BF3F48D11A13150B00D7C943 /* FMDatabasePool.m in Sources */,
 				BF3F49561A13150B00D7C943 /* LC_UIButton.m in Sources */,
 				1349701E18B3CF660037D252 /* TestSystemInfoViewController.m in Sources */,

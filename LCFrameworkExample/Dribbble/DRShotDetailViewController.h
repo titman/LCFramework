@@ -12,6 +12,8 @@
 
 @interface DRShotDetailViewController : LC_UITableViewController
 
-@property(nonatomic,retain) SHOT * shot;
+
+-(instancetype) initWithShot:(SHOT *)shot;
+
 
 @end

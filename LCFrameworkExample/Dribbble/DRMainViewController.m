@@ -69,20 +69,20 @@
     
 }
 
-LC_HANDLE_SIGNAL(DRModelShotListLoadFinished){
-    
+LC_HANDLE_SIGNAL(DRModelShotListLoadFinished)
+{
     [self reloadData];
     [self.pullLoader endRefresh];
 }
 
-LC_HANDLE_SIGNAL(DRModelShotListLoadFailed){
-    
+LC_HANDLE_SIGNAL(DRModelShotListLoadFailed)
+{
     [self.pullLoader endRefresh];
     [self showMessageHud:@"加载失败..."];
 }
 
-LC_HANDLE_SIGNAL(DRShotListCellDetailAction){
-
+LC_HANDLE_SIGNAL(DRShotListCellDetailAction)
+{
     NSArray * tag = [((UIView *)signal.source).tagString componentsSeparatedByString:@"-"];
     
     NSInteger row = [tag[0] integerValue];
@@ -90,12 +90,8 @@ LC_HANDLE_SIGNAL(DRShotListCellDetailAction){
     
     SHOT * data = self.listModel.shots[row + index];
     
-    NSLog(@"Data : %@",data);
-    NSLog(@"Index : %d",row + index);
-    
-    //DRShotDetailViewController * detail = [DRShotDetailViewController viewController];
-    //detail.shot = data;
-    //[self.navigationController pushViewController:detail animated:YES];
+    DRShotDetailViewController * detail = [[[DRShotDetailViewController alloc] initWithShot:data] autorelease];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark -

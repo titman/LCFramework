@@ -17,3 +17,7 @@
 @implementation SHOT
 
 @end
+
+@implementation COMMENT
+
+@end

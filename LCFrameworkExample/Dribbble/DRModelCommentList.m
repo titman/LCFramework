@@ -1,34 +1,34 @@
 //
-//  DRModelShotList.m
+//  DRModelCommentList.m
 //  LCFrameworkExample
 //
-//  Created by 郭历成 ( titm@tom.com ) on 14-11-15.
+//  Created by Licheng Guo . http://nsobject.me/ on 14/11/24.
 //  Copyright (c) 2014年 Licheng Guo iOS Developer ( http://nsobject.me ). All rights reserved.
 //
 
-#import "DRModelShotList.h"
+#import "DRModelCommentList.h"
 #import "DRShotsListData.h"
 
-#define PER_PAGE	(30)
+#define PER_PAGE	(20)
 
-@implementation DRModelShotList
+@implementation DRModelCommentList
 
-LC_IMP_SIGNAL(DRModelShotListLoadFinished);
-LC_IMP_SIGNAL(DRModelShotListLoadFailed);
+LC_IMP_SIGNAL(DRModelCommentListLoadFinished);
+LC_IMP_SIGNAL(DRModelCommentListLoadFailed);
 
 -(void) dealloc
 {
-    [_shots release];
+    [_id release];
+    [_comments release];
     
     [super dealloc];
 }
-
 
 -(void) goToPage:(NSInteger)page
 {
     [self.modelInterface cancelRequests];
     
-    self.modelInterface.url = [LC_API LCInstance].url.APPEND(@"shots/popular");
+    self.modelInterface.url = [LC_API LCInstance].url.APPEND(@"shots/%@/comments",self.id);
     
     self.modelInterface.parameters.APPEND(@"per_page",@(PER_PAGE));
     self.modelInterface.parameters.APPEND(@"page",@(page));
@@ -41,20 +41,22 @@ LC_IMP_SIGNAL(DRModelShotListLoadFailed);
         
         if (request.succeed) {
             
-            id result = [SHOT objectsFromArray:request.jsonData[@"shots"]];
+            id value = request.jsonData;
+            
+            id result = [COMMENT objectsFromArray:request.jsonData[@"comments"]];
             
             if (page == 1) {
-                nRetainSelf.shots = result;
+                nRetainSelf.comments = result;
             }
             else{
-                [nRetainSelf.shots addObjectsFromArray:result];
+                [nRetainSelf.comments addObjectsFromArray:result];
             }
             
-            [nRetainSelf sendUISignal:self.DRModelShotListLoadFinished];
+            [nRetainSelf sendUISignal:self.DRModelCommentListLoadFinished];
         }
         else if(request.failed){
-         
-            [nRetainSelf sendUISignal:self.DRModelShotListLoadFailed];
+            
+            [nRetainSelf sendUISignal:self.DRModelCommentListLoadFailed];
         }
         else if (request.cancelled){
             

@@ -49,3 +49,11 @@
 @property (nonatomic, retain) NSNumber *			width;
 @property (nonatomic, retain) NSNumber *			id;
 @end
+
+@interface COMMENT : LC_Model
+@property (nonatomic, retain) NSString *			body;
+@property (nonatomic, retain) NSString *			created_at;
+@property (nonatomic, retain) NSNumber *			likes_count;
+@property (nonatomic, retain) PLAYER *			player;
+@property (nonatomic, retain) NSNumber *			id;
+@end

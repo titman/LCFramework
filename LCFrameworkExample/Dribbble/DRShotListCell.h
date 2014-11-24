@@ -12,6 +12,16 @@
 
 @class SHOT;
 
+#pragma mark -
+
+@interface DRShotBottomView : LC_UIBlurView
+
+-(void) setShot:(SHOT *)shot;
+
+@end
+
+#pragma mark -
+
 @interface DRShotListCell : LC_UITableViewCell
 
 @property(nonatomic,assign) SHOT * shot;

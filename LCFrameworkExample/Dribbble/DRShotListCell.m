@@ -11,7 +11,7 @@
 #import "DRShotListCell.h"
 #import "DRShotsListData.h"
 
-@interface DRShotBottomView : LC_UIBlurView
+@interface DRShotBottomView()
 {
     LC_UIImageView * _lookTip;
     LC_UILabel * _lookLabel;
@@ -133,6 +133,7 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
         _shotView.showIndicator = YES;
         _shotView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
         _shotView.userInteractionEnabled = YES;
+        _shotView.contentMode = UIViewContentModeScaleAspectFill;
         _shotView.signalName = self.DRShotListCellDetailAction;
         self.ADD(_shotView);
         
@@ -143,6 +144,7 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
         _shotViewOther.showIndicator = YES;
         _shotViewOther.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
         _shotViewOther.userInteractionEnabled = YES;
+        _shotViewOther.contentMode = UIViewContentModeScaleAspectFill;
         _shotViewOther.signalName = self.DRShotListCellDetailAction;
         self.ADD(_shotViewOther);
         
@@ -167,16 +169,13 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
         _headView.viewFrameY = _shotView.viewFrameHeight - _bottomBackOther.viewFrameHeight - 5 - 45;
         _headView.viewFrameWidth = 45;
         _headView.viewFrameHeight = 45;
-        _headView.layer.borderColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5].CGColor;
-        _headView.layer.borderWidth = 2;
+        
         _shotView.ADD(_headView);
         
         
         
         _headViewOther = LC_UIImageView.view;
         _headViewOther.frame = _headView.frame;
-        _headViewOther.layer.borderColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5].CGColor;
-        _headViewOther.layer.borderWidth = 1;
         
         _shotViewOther.ADD(_headViewOther);
         
@@ -212,7 +211,7 @@ LC_IMP_SIGNAL(DRShotListCellDetailAction);
     _headViewOther.url    = _shotOther.player.avatar_url;
     _bottomBackOther.shot = shotOther;
     
-    _shotView.tagString = LC_NSSTRING_FORMAT(@"%d-1",self.cellIndexPath.row);
+    _shotViewOther.tagString = LC_NSSTRING_FORMAT(@"%d-1",self.cellIndexPath.row);
 }
 
 @end
